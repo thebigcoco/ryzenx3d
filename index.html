@@ -112,13 +112,13 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <tr><td></td><td></td><td>9900X3D</td><td>1</td></tr>
 </tbody></table></div>
 <h3>2. Google Sheets 以外案例</h3>
-<p>與 2026-08-17 版本比對後，新增 7 個外部案例（其中 3 個來自既有貼文的留言，另 1 個來自全 Reddit 搜尋發現的 r/pctroubleshooting）；外部搜尋原有 13 筆，另排除 1 筆透過修正 RAM timing 後恢復，本版共 19 筆。分類依貼文／留言原文：有明確實體燒痕、燒毀圖像或膨脹列入「有證據燒掉」；Q-Code 00、不能 POST、黑屏、CPU／DRAM 燈、跨板無法開機，或已確認 CPU 死亡但無實體燒毀證據，列入「00／不能開機／確認 CPU 死亡」。</p>
+<p>與 2026-08-17 版本比對後，新增 7 個外部案例（其中 3 個來自既有貼文的留言，另 1 個來自全 Reddit 搜尋發現的 r/pctroubleshooting）；外部搜尋原有 13 筆，另排除 1 筆透過修正 RAM timing 後恢復，本版共 19 筆。經逐案重讀原文與留言後，三類採互斥分類：有直接實體燒痕、燒毀圖像或膨脹證據者列入「有證據燒掉」；有跨主機板、替換 CPU 後正常、店家測試或明確故障確認，且沒有燒掉證據者列入「確認 CPU 死亡（無燒掉證據）」；其餘 Q-Code 00、不能 POST、黑屏、作者自述 dead／cooked 或只有 RMA 尚無結果者列入「00／不能開機（不確定 CPU 是否死亡）」。</p>
 <div class="scroll"><table class="external-stats">
-<thead><tr><th>外部樣本類別</th><th>次數</th><th>判定說明</th></tr></thead>
+<thead><tr><th>案例類別</th><th>次數</th><th>判定說明</th></tr></thead>
 <tbody>
-<tr><td>有證據燒掉</td><td>3</td><td>2 筆有明確 burn marks／burned patterns／swelling；另 1 筆為 2024 年 MSI Tomahawk 燒毀轉述，留言對安裝錯誤有爭議，列入但標註低可信度。</td></tr>
-<tr><td>00／不能開機／確認 CPU 死亡</td><td>16</td><td>包含 Q-Code 00／0x00／03、CPU／DRAM 燈、無法 POST、黑屏，或已透過跨主機板／替換 CPU／RMA 確認 CPU 死亡，但沒有足夠實體燒毀證據；新增案例包含貼文留言及全 Reddit 搜尋。</td></tr>
-<tr><td>確認 CPU 死亡</td><td>6</td><td>交叉統計：原文有跨主機板測試、替換 CPU 後正常、店家測試或明確 RMA／故障確認；此列可與上列分類重疊。</td></tr>
+<tr><td>有證據燒掉</td><td>2</td><td>原文直接描述 CPU 有 burn marks／swelling 或實體燒毀，並伴隨主機板／插槽損壞；2024 年 MSI Tomahawk 轉述因證據不足已降至不確定類別。</td></tr>
+<tr><td>確認 CPU 死亡（無燒掉證據）</td><td>4</td><td>原文有跨主機板測試、替換 CPU 後正常、店家測試或明確故障確認，且沒有實體燒掉證據。</td></tr>
+<tr><td>00／不能開機（不確定 CPU 是否死亡）</td><td>13</td><td>只有 Q-Code 00／0x00／03、CPU／DRAM 燈、無法 POST 或黑屏；也包含作者自述 dead／cooked、僅送 RMA 尚無結果，以及證據不足的轉述。</td></tr>
 <tr><td>合計</td><td>19</td><td>已排除 1 筆透過修正 RAM timing 後恢復的案例；只計入不在 Google Sheets 207 筆 URL 集合中的案例，並以貼文／留言個案去重；不是故障率。</td></tr>
 </tbody></table></div>
 <h3>主機板廠牌分布 - Google Sheets 以外案例</h3>

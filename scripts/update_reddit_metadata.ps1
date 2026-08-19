@@ -33,7 +33,8 @@ function Get-PostMetadata([string[]]$ids) {
 }
 
 function Format-TaipeiTime([long]$unixTime) {
-    return [DateTimeOffset]::FromUnixTimeSeconds($unixTime).ToOffset($taipeiOffset).ToString('yyyy-MM-dd HH:mm:ss')
+    $local = [DateTimeOffset]::FromUnixTimeSeconds($unixTime).ToOffset($taipeiOffset)
+    return $local.ToString('yyyy-MM-dd') + '<br><span class="case-time">' + $local.ToString('HH:mm:ss') + '</span>'
 }
 
 function Format-Author([string]$author) {
@@ -92,7 +93,7 @@ foreach ($item in $combinedItems) {
     }
 }
 $combinedOutput = @($combinedOutput | Sort-Object Unix -Descending)
-$combinedHeader = '<thead><tr><th>發文時間（台灣）</th><th>Reddit 使用者</th><th>CPU</th><th>主機板</th><th>Subreddit</th><th>原文標題</th><th>信心</th><th>來源</th></tr></thead>'
+$combinedHeader = '<thead><tr><th>發文時間（台灣）</th><th>Reddit 使用者</th><th>CPU</th><th>主機板</th><th>Subreddit</th><th>原文標題</th><th>案例類別</th><th>原文證據</th><th>信心／位置</th></tr></thead>'
 $newCombinedTable = '<table id="combined-cases">' + "`r`n" + $combinedHeader + "`r`n<tbody>" + (($combinedOutput.Html) -join '') + '</tbody>' + "`r`n</table>"
 $html = $html.Remove($combinedMatch.Index, $combinedMatch.Length).Insert($combinedMatch.Index, $newCombinedTable)
 
@@ -137,7 +138,11 @@ foreach ($item in $evidenceItems) {
     $timeText = if ($isUnknownMegathread) { '2025-04-27（留言時間未確認）' } else { Format-TaipeiTime $unix }
     $parts = @('<td>' + $timeText + '</td>', '<td>' + $authorHtml + '</td>')
     for ($j = $contentStart; $j -lt $sourceIndex; $j++) {
-        $parts += '<td>' + $cells[$j].Groups[1].Value + '</td>'
+        $cellHtml = $cells[$j].Groups[1].Value
+        if ($item.Id -eq '1vq97nd' -and $j -eq ($sourceIndex - 1)) {
+            $cellHtml = '貼文正文／中／有證據燒掉'
+        }
+        $parts += '<td>' + $cellHtml + '</td>'
     }
     $parts += '<td>' + $sourceHtml + '</td>'
     $evidenceOutput += [pscustomobject]@{
@@ -152,7 +157,7 @@ $html = $html.Remove($evidenceTargetMatch.Index, $evidenceTargetMatch.Length).In
 
 $html = $html.Replace('日期約為 2025-06-24～2026-06-23', '發文時間（台灣）約為 2025-06-25～2026-06-23')
 $combinedSummary = '<p>母表的 Detailed results 共 <b>207 筆貼文</b>；本表已依 Reddit <code>created_utc</code> 轉為台灣時間並重新排序，發文時間（台灣）約為 2025-06-25～2026-06-23；CPU 分布為：9950X3D 30 筆、9800X3D 139 筆、7800X3D 28 筆、7900X3D 2 筆、9800X3DS 2 筆、7950X3D 5 筆、9900X3D 1 筆。母表的 Global results 顯示品牌合計：ASRock 145、ASUS 44、MSI 11、Gigabyte 7，合計 207。</p>'
-$html = [regex]::Replace($html, '<p>母表的 Detailed results 共 <b>207 筆貼文</b>[sS]*?母表的 Global results 顯示品牌合計：ASRock 145、ASUS 44、MSI 11、Gigabyte 7，合計 207。</p>', $combinedSummary, 1)
+$html = [regex]::Replace($html, '<p>母表的 Detailed results 共 <b>207 筆貼文</b>[\s\S]*?母表的 Global results 顯示品牌合計：ASRock 145、ASUS 44、MSI 11、Gigabyte 7，合計 207。</p>', $combinedSummary, 1)
 $html = $html.Replace('<p class="small">下列引文保留 Reddit 原文，僅摘錄能直接支持 CPU 型號、主機板、故障現象或驗證結果的短句；「正文／留言」表示引文所在位置。</p>', '<p class="small">下列引文保留 Reddit 原文；時間以 <code>created_utc</code> 轉為台灣時間（UTC+8）。貼文作者直接取自貼文 metadata；留言作者以真實 comment ID 核對。舊 megathread 有 1 筆未保留 comment ID，明確標示為「留言作者未確認」。</p>')
 
 $generatedAt = [DateTimeOffset]::Now.ToOffset($taipeiOffset).ToString('yyyy-MM-dd HH:mm')

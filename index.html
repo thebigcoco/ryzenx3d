@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="assets/burnt-coconut-icon.png">
 <style>
 :root{color-scheme:light;--ink:#1f2937;--muted:#64748b;--line:#dbe3ec;--blue:#0f4c81;--red:#a12b2b;--amber:#8a5a00;--green:#176b45}
-body{font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;line-height:1.65;color:var(--ink);background:#f5f7fa;margin:0}#death-keywords-confirmation{display:none}
+body{font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;line-height:1.65;color:var(--ink);background:#f5f7fa;margin:0}
 main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:18px;box-shadow:0 2px 8px #0f172a0b} h1{font-size:28px;line-height:1.25;margin:0 0 10px;color:var(--blue)} h2{font-size:21px;color:var(--blue);margin:0 0 12px} p{margin:7px 0}.meta{color:var(--muted);font-size:14px}.note{background:#fff8e7;border-left:4px solid #d49b18;padding:12px 14px;border-radius:6px}.danger{color:var(--red);font-weight:700}.good{color:var(--green);font-weight:700}.tag{display:inline-block;border-radius:999px;padding:2px 9px;margin:2px 4px 2px 0;font-size:12px;font-weight:700;background:#e8eef6;color:#24496d}.tag.red{background:#fde8e8;color:#972c2c}.tag.amber{background:#fff1c9;color:#805400}.tag.green{background:#dff5e9;color:#176b45}.scroll{overflow-x:auto} table{border-collapse:collapse;width:100%;font-size:14px;min-width:1050px} th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top;text-align:left} th{background:#edf3f9;color:#174a75;position:sticky;top:0} tr:nth-child(even){background:#fbfcfe} a{color:#075ea8;text-decoration:none} a:hover{text-decoration:underline}.small{font-size:13px;color:var(--muted)} ul{margin:8px 0 8px 22px} footer{color:var(--muted);font-size:13px;padding:4px 4px 20px}
 .brand-row{display:flex;align-items:center;gap:11px}.report-icon{width:58px;height:58px;object-fit:contain;flex:0 0 auto}.brand-row h1{margin:0}@media(max-width:700px){.brand-row{align-items:flex-start;gap:7px}.report-icon{width:48px;height:48px}.brand-row h1{font-size:23px}}
 #combined-cases{width:100%;min-width:0;table-layout:fixed;font-size:14px;line-height:1.55}
@@ -33,22 +33,20 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <main>
 <header>
 <div class="brand-row"><img class="report-icon" src="assets/burnt-coconut-icon.png" width="58" height="58" alt="剖開並燒焦冒煙的椰子圖示"><h1>Reddit - Ryzen 7000／9000 系列CPU 燒毀與CPU壞掉/POST Code 00 不開機案例</h1></div>
-<p class="meta">搜尋及整理日期：2026-08-20 15:02（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-08-20　｜　平台：Reddit 公開貼文與留言</p>
+<p class="meta">搜尋及整理日期：2026-08-20 15:30（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-08-20　｜　平台：Reddit 公開貼文與留言</p>
 <p>本報告整理 AMD Ryzen 7000／9000 桌上型 CPU 的公開 Reddit 貼文與留言，時間範圍自 2024-01-01 起。案例依原文證據分為燒毀、確認 CPU 死亡、POST Code 00、不能開機，以及「設定後恢復」；最後一類表示原 CPU 經 BIOS、CMOS、記憶體或其他設定修正後可正常開機／使用，會保留供查核，但不納入 CPU 故障統計。案例數僅為公開回報彙整，不代表產品故障率或因果關係。</p>
 </header>
 
 <section class="card">
 <h2>關鍵字與篩選規則</h2>
-<p><b>Ryzen 7000 具體型號：</b><span class="tag">7950X3D</span><span class="tag">7950X</span><span class="tag">7900X3D</span><span class="tag">7900X</span><span class="tag">7900</span><span class="tag">7800X3D</span><span class="tag">7700X</span><span class="tag">7700</span><span class="tag">7600X3D</span><span class="tag">7600X</span><span class="tag">7600</span><span class="tag">7500F</span></p>
-<p><b>Ryzen 9000 具體型號：</b><span class="tag">9950X3D2</span><span class="tag">9950X3D</span><span class="tag">9950X</span><span class="tag">9900X3D</span><span class="tag">9900X</span><span class="tag">9850X3D</span><span class="tag">9800X3D</span><span class="tag">9700X</span><span class="tag">9700F</span><span class="tag">9600X</span><span class="tag">9600</span><span class="tag">9500F</span></p>
-<p><span class="tag red">burnt</span><span class="tag red">burned</span><span class="tag red">fried</span><span class="tag red">dead CPU</span><span class="tag red">burn marks</span><span class="tag red">smoke</span><span class="tag red">socket damage</span><span class="tag amber">Q-Code 00</span><span class="tag amber">POST code 00</span><span class="tag amber">debug code 00</span><span class="tag amber">no POST</span><span class="tag amber">won't boot</span><span class="tag">SoC／VSOC</span><span class="tag">EXPO</span><span class="tag">PBO</span></p>
-<p><b>搜尋不預設 subreddit：</b>以 site:reddit.com 全站搜尋貼文與留言，再由結果反查實際 subreddit；CPU 型號、Death Keywords、burn／fried／dead、Q-Code 00、POST、no boot 等組合均不加 subreddit 限制。只採用可從原文確認 CPU 型號、時間與結果的案例；主機板資料不足時保留已知品牌或晶片組，並標示「未註明」。</p>
-<p><b>日期與分頁規則：</b>只納入 2024-01-01 以後的結果；每組 CPU 型號／Death Keywords／症狀組合都要逐頁檢查後續搜尋結果，不以第一頁代表全部結果。每筆候選都要開啟原始貼文，並閱讀相關留言後，才確認是否納入；留言案例不得忽略。</p>
-<p><b>型號別名與泛用標題補漏：</b>每個 SKU 同時搜尋裸型號、大小寫與品牌前綴，例如 <code>9700X</code>、<code>9700x</code>、<code>AMD 9700X</code>、<code>Ryzen 7 9700X</code>；另以 <code>CPU dead</code>、<code>dead CPU</code>、<code>CPU died</code>、<code>black screen</code>、<code>red CPU LED</code>、<code>won't POST</code>、<code>code 00</code> 等不含型號的泛用標題先收集候選，再逐篇從正文與留言辨識 CPU。並逐頁檢查各 subreddit 的 new／search 結果及相關貼文，不要求標題或搜尋摘要同時包含完整 Ryzen 名稱。</p>
-<p><b>逐筆閱讀規則：</b>每篇貼文及相關留言均須實際閱讀；只採用原文明確寫出的 CPU、主機板、症狀、處理步驟、結果與日期。來源未明確提供的欄位一律標示「未註明」，不以標題、其他使用者推測或搜尋摘要補填，也不把「可能／懷疑」改寫成已確認故障。</p>
-<p><b>恢復案例規則：</b>不論原先是否顯示 Q-Code／POST Code 00，也不論症狀是黑畫面、無法 POST、CPU／DRAM 燈或其他無法開機情形，只要原 CPU 在回刷 BIOS、清除 CMOS、修正記憶體／EXPO／timing 或其他設定後恢復正常開機或使用，即列為「設定後恢復（不計入 CPU 故障統計）」。僅換入另一顆 CPU 後恢復，不能證明原 CPU 未故障，不適用此規則。</p>
-<p><b>ASUS 相關擴充範圍：</b>除 r/ASUS 外，本次納入 r/ASUSROG，並交叉檢查 ASUS ROG STRIX X870E-E、ROG X870E Dark Hero、ROG Crosshair X670E Extreme、ROG STRIX X670E-E 等主機板搭配 Ryzen 7000／9000 的死亡、Q-Code 00 與無法 POST 討論。</p>
-<p>重新搜尋確認：依 Google Sheets「Death Keywords」分頁重新使用 dead、died、dies、dying、death、kill/killed/killing/kills、fried/fry/fries/frying、burn/burned/burnt/burning、brick/bricked/bricking、destroy/destroyed、damage/damaged、defective、faulty、cook/cooked、toast/toasted、smoke/smoked、RIP、DOA、RMA、fail/failed/failure/failing，以及 no POST、no boot、error code 00、CPU/DRAM light、black screen、physical damage 等詞；本次再把 AMD 官方桌上型產品頁列出的上述 24 個具體型號逐一與症狀詞、主機板品牌／晶片組及日期交叉搜尋。PRO、Threadripper、行動版與 Ryzen 8000G 不在本報告範圍。</p>
+<p><b>CPU 型號：</b>Ryzen 7000：7950X3D、7950X、7900X3D、7900X、7900、7800X3D、7700X、7700、7600X3D、7600X、7600、7500F；Ryzen 9000：9950X3D2、9950X3D、9950X、9900X3D、9900X、9850X3D、9800X3D、9700X、9700F、9600X、9600、9500F。</p>
+<p><b>故障關鍵字：</b>dead／died／death、kill／killed、fried／fry、burn／burned／burnt、brick、destroy、damage、defective、faulty、cook、toast、smoke、RIP、DOA、RMA、fail／failure，以及 Q-Code／POST／Debug 00、no POST、no boot、won't boot、CPU／DRAM light、black screen、physical damage。</p>
+<ul>
+<li><b>搜尋範圍：</b>2024-01-01 起的 Reddit 全站貼文與留言，不限 subreddit；型號使用大小寫、AMD／Ryzen 前綴與多語言變體，搜尋結果逐頁檢查，並追查舊貼文中的新留言。</li>
+<li><b>納入原則：</b>限 Ryzen 7000／9000 桌上型 CPU；逐篇閱讀原文及相關留言，只記錄明確提供的型號、主機板、時間、症狀與結果，未提供者標示「未註明」。PRO、Threadripper、行動版及 Ryzen 8000G 排除。</li>
+<li><b>排除原則：</b>原 CPU 經 BIOS／CMOS／記憶體設定修正後恢復，或交叉測試確認可正常開機者，列「設定後恢復」並排除 CPU 故障統計；案例分類依下方統計表的「判定說明」。</li>
+<li><b>去除重複：</b>同一網址先正規化；同一使用者跨貼重述同一事件只計一次，同一貼文中不同使用者的獨立故障則分別列入。</li>
+</ul>
 </section>
 
 <section class="card">
@@ -71,13 +69,6 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 </tbody></table></div>
 </section>
 
-<section class="card" id="death-keywords-confirmation">
-<h2>依 Google Sheets「Death Keywords」重新搜尋確認（內容已併入上方）</h2>
-<p>本次重新採用分頁中的關鍵字：<b>dead、died、dies、dying、death、kill/killed/killing/kills、fried/fry/fries/frying、burn/burned/burnt/burning、brick/bricked/bricking、destroy/destroyed、damage/damaged、defective、faulty、cook/cooked、toast/toasted、smoke/smoked、RIP、DOA、RMA、fail/failed/failure/failing</b>；另保留母表中使用的 <b>no POST、no boot、error code 00、CPU/DRAM light、black screen、physical damage</b> 等硬體症狀詞。</p>
-<p>搜尋結果再次確認以下類型：9800X3D／9950X3D 在 ASRock、ASUS、MSI、Gigabyte 主機板上的死亡或無法 POST 回報；部分貼文包含 Q-Code 00／03、CPU 或 DRAM 燈、RMA、跨主機板測試，以及無燒痕但 CPU 確認死亡的案例。<a href="https://www.reddit.com/r/ASRock/comments/1iui7lx/" target="_blank" rel="noopener">9800X3D failures/deaths megathread</a> 也集中收錄了多個貼文與留言案例。</p>
-<div class="note"><b>確認結果：</b>Google Sheets 的 207 筆不是由單次網頁搜尋自然產生，而是以 CPU 型號、死亡詞、主機板品牌／晶片組及多種排序系統化掃描後去重的貼文母表。因此，重新用瀏覽器搜尋只能驗證代表案例與母表方向，不能取代逐一掃描 207 筆，也不能把搜尋引擎顯示數量當成完整總數。</div>
-</section>
-
 <section class="card">
 <h2>原文證據摘錄（2024-01-01 起）</h2>
 <p class="small">下列引文保留 Reddit 原文；時間以 <code>created_utc</code> 轉為台灣時間（UTC+8）。貼文作者直接取自貼文 metadata；留言作者以真實 comment ID 核對。舊 megathread 有 1 筆未保留 comment ID，明確標示為「留言作者未確認」。</p>
@@ -88,7 +79,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 
 <section class="card">
 <h2>統計摘要</h2>
-<h3>1. Google Sheets - by Reddit user Healthy_Try4444</h3>
+<h3>1. 已整理的Google Sheets (2025-07-30 - 2026/06/23) - by Reddit user Healthy_Try4444</h3>
 <p>原始掃描貼文：<a href="https://www.reddit.com/r/hardware/comments/1udvqv7/i_scanned_a_full_year_of_reddit_for_x3d_chips/" target="_blank" rel="noopener">I scanned a full year of Reddit for X3D chips dying on AM5 boards</a>；統計母表：Google Sheets 207 筆。</p>
 <div class="scroll"><table class="stats-table">
 <thead><tr><th>主機板廠牌</th><th>次數</th><th>佔比</th><th>CPU 型號</th><th>次數</th><th>佔比</th></tr></thead>

@@ -33,7 +33,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <main>
 <header>
 <div class="brand-row"><img class="report-icon" src="assets/burnt-coconut-icon.png" width="58" height="58" alt="剖開並燒焦冒煙的椰子圖示"><h1>Reddit - Ryzen 7000／9000 系列CPU 燒毀與CPU壞掉/POST Code 00 不開機案例</h1></div>
-<p class="meta">搜尋及整理日期：2026-08-20 12:00（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-08-20　｜　平台：Reddit 公開貼文與留言</p>
+<p class="meta">搜尋及整理日期：2026-08-20 15:02（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-08-20　｜　平台：Reddit 公開貼文與留言</p>
 <p>本報告整理 AMD Ryzen 7000／9000 桌上型 CPU 的公開 Reddit 貼文與留言，時間範圍自 2024-01-01 起。案例依原文證據分為燒毀、確認 CPU 死亡、POST Code 00、不能開機，以及「設定後恢復」；最後一類表示原 CPU 經 BIOS、CMOS、記憶體或其他設定修正後可正常開機／使用，會保留供查核，但不納入 CPU 故障統計。案例數僅為公開回報彙整，不代表產品故障率或因果關係。</p>
 </header>
 
@@ -102,60 +102,62 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <tr><td></td><td></td><td></td><td>9900X3D</td><td>1</td><td>0.48%</td></tr>
 </tbody></table></div>
 <h3>2. CPU 故障案例類別統計（已排除設定後恢復）</h3>
-<p>CPU 故障統計共 295 筆：Google Sheets 母表 206 筆、母表以外 89 筆；兩者均採相同且互斥的四類判定。具直接實體燒痕、膨脹、燒毀照片或可見變色／刮痕證據者列「有證據燒掉」；有第一人稱明確死亡敘述、跨主機板／替換 CPU 對照、店家測試、RMA 或其他明確確認者列「確認 CPU 死亡（無燒掉證據）」；未確認 CPU 死亡者，再依原文是否明確出現主機板 POST／Q-Code／Debug 的 <code>00</code> 或 <code>0x00</code> 分為「POST Code 00」與「不能開機」。原 CPU 經 BIOS、CMOS、記憶體／EXPO／timing 或其他設定修正後可正常開機／使用者，改列「設定後恢復」並保留於整合案例表，但不列入上述四類與統計分母。目前已人工確認 3 筆，其中 2 筆原先位於 297 筆統計母體內，故分母調整為 295。</p>
+<p>CPU 故障統計共 320 筆：Google Sheets 母表 206 筆、Google Sheets 以外 114 筆。另有 3 筆設定後恢復案例保留於整合案例表，不納入 CPU 故障統計分母。</p>
 <div class="scroll"><table class="external-stats">
-<thead><tr><th>案例類別</th><th>Google Sheets<br>206 筆</th><th>Google Sheets 以外<br>89 筆</th><th>合計<br>295 筆</th><th>判定說明</th></tr></thead>
+<thead><tr><th>案例類別</th><th>Google Sheets<br>206 筆</th><th>Google Sheets 以外<br>114 筆</th><th>合計<br>320 筆</th><th>判定說明</th></tr></thead>
 <tbody>
-<tr><td>有證據燒掉</td><td>6（2.91%）</td><td>8（8.99%）</td><td>14（4.75%）</td><td>原文直接描述 CPU 有 burn marks／swelling、實體燒毀或可見變色／刮痕；包含「a small looking scratch and looks a little darker」案例。</td></tr>
-<tr><td>確認 CPU 死亡（無燒掉證據）</td><td>95（46.12%）</td><td>58（65.17%）</td><td>153（51.86%）</td><td>第一人稱明確陳述 CPU died／dead，或原文有跨主機板測試、替換 CPU 後正常、店家測試、RMA 更換或明確故障確認，且沒有實體燒掉證據。</td></tr>
-<tr><td>POST Code 00（不確定 CPU 是否死亡）</td><td>8（3.88%）</td><td>10（11.24%）</td><td>18（6.10%）</td><td>原文明確指出主機板 POST／Q-Code／Debug 顯示 00 或 0x00，但尚無足夠證據確認 CPU 死亡。</td></tr>
-<tr><td>不能開機（不確定 CPU 是否死亡）</td><td>97（47.09%）</td><td>13（14.61%）</td><td>110（37.29%）</td><td>無法 POST、黑屏、CPU／DRAM 燈、其他錯誤碼、疑問或推測語氣，以及僅送 RMA 尚無結果；原文沒有明確指出顯示 00。</td></tr>
-<tr><td>設定後恢復（不計入 CPU 故障統計）</td><td>1</td><td>1</td><td>2</td><td>原 CPU 經 BIOS／CMOS／記憶體或其他設定修正後恢復；另有 1 筆既有補充案例同樣保留在清單供查核。</td></tr>
-<tr><td>CPU 故障統計合計</td><td>206（100%）</td><td>89（100%）</td><td>295（100%）</td><td>統計案例彙整數，不是故障率；設定後恢復案例不在分母內。</td></tr>
+<tr><td>有證據燒掉</td><td>6（2.91%）</td><td>9（7.89%）</td><td>15（4.69%）</td><td>原文直接描述 CPU 有 burn marks／swelling、實體燒毀、可見變色／刮痕，或使用者第一人稱明確表示 CPU was burn／burned；包含「a small looking scratch and looks a little darker」案例。</td></tr>
+<tr><td>確認 CPU 死亡（無燒掉證據）</td><td>95（46.12%）</td><td>79（69.30%）</td><td>174（54.38%）</td><td>第一人稱明確陳述 CPU died／dead，或原文有跨主機板測試、替換 CPU 後正常、店家測試、RMA 更換或明確故障確認，且沒有燒掉敘述或實體燒掉證據。</td></tr>
+<tr><td>POST Code 00（不確定 CPU 是否死亡）</td><td>8（3.88%）</td><td>13（11.40%）</td><td>21（6.56%）</td><td>原文明確指出主機板 POST／Q-Code／Debug 顯示 00 或 0x00，但尚無足夠證據確認 CPU 死亡。</td></tr>
+<tr><td>不能開機（不確定 CPU 是否死亡）</td><td>97（47.09%）</td><td>13（11.40%）</td><td>110（34.38%）</td><td>無法 POST、黑屏、CPU／DRAM 燈、其他錯誤碼、疑問或推測語氣，以及僅送 RMA 尚無結果；原文沒有明確指出顯示 00。</td></tr>
+<tr><td>設定後恢復（不計入 CPU 故障統計）</td><td>1</td><td>2</td><td>3</td><td>原 CPU 經 BIOS／CMOS／記憶體或其他設定修正後恢復，或交叉測試確認原 CPU 可正常開機；保留在整合案例表供查核。</td></tr>
+<tr><td>CPU 故障統計合計</td><td>206（100%）</td><td>114（100%）</td><td>320（100%）</td><td>統計案例彙整數，不是故障率；設定後恢復案例不在分母內。</td></tr>
 </tbody></table></div>
 <h3>主機板廠牌分布（CPU 故障統計；已排除設定後恢復）</h3>
 <div class="scroll"><table class="external-board-stats">
-<thead><tr><th>主機板廠牌</th><th>Google Sheets<br>206 筆</th><th>Google Sheets 以外<br>89 筆</th><th>合計<br>295 筆</th></tr></thead>
+<thead><tr><th>主機板廠牌</th><th>Google Sheets<br>206 筆</th><th>Google Sheets 以外<br>114 筆</th><th>合計<br>320 筆</th></tr></thead>
 <tbody>
-<tr><td>ASRock</td><td>144（69.90%）</td><td>51（57.30%）</td><td>195（66.10%）</td></tr>
-<tr><td>ASUS</td><td>44（21.36%）</td><td>19（21.35%）</td><td>63（21.36%）</td></tr>
-<tr><td>MSI</td><td>11（5.34%）</td><td>6（6.74%）</td><td>17（5.76%）</td></tr>
-<tr><td>Gigabyte</td><td>7（3.40%）</td><td>3（3.37%）</td><td>10（3.39%）</td></tr>
-<tr><td>未註明</td><td>0（0%）</td><td>8（8.99%）</td><td>8（2.71%）</td></tr>
-<tr><td>NZXT</td><td>0（0%）</td><td>2（2.25%）</td><td>2（0.68%）</td></tr>
-<tr><td>合計</td><td>206（100%）</td><td>89（100%）</td><td>295（100%）</td></tr>
+<tr><td>ASRock</td><td>144（69.90%）</td><td>65（57.02%）</td><td>209（65.31%）</td></tr>
+<tr><td>ASUS</td><td>44（21.36%）</td><td>24（21.05%）</td><td>68（21.25%）</td></tr>
+<tr><td>MSI</td><td>11（5.34%）</td><td>9（7.89%）</td><td>20（6.25%）</td></tr>
+<tr><td>Gigabyte</td><td>7（3.40%）</td><td>5（4.39%）</td><td>12（3.75%）</td></tr>
+<tr><td>未註明</td><td>0（0%）</td><td>9（7.89%）</td><td>9（2.81%）</td></tr>
+<tr><td>NZXT</td><td>0（0%）</td><td>2（1.75%）</td><td>2（0.62%）</td></tr>
+<tr><td>合計</td><td>206（100%）</td><td>114（100%）</td><td>320（100%）</td></tr>
 </tbody></table></div>
-<p class="small">註：Google Sheets、Google Sheets 以外案例與合計的分母分別為 206、89、295；已排除設定後恢復者。只有原文明確列出主機板廠牌才計入品牌；表外案例未提供者列為「未註明」，不以留言推測補填。百分比四捨五入至小數點後兩位。</p>
+<p class="small">註：Google Sheets、Google Sheets 以外案例與合計的分母分別為 206、114、320；已排除設定後恢復案例。只有原文明確列出主機板廠牌才計入品牌；表外案例未提供者列為「未註明」，不以留言推測補填。百分比四捨五入至小數點後兩位。</p>
 <h3>3. CPU model 分布（CPU 故障統計；已排除設定後恢復）</h3>
 <div class="scroll"><table class="external-cpu-stats">
-<thead><tr><th>CPU model</th><th>Google Sheets<br>206 筆</th><th>Google Sheets 以外<br>89 筆</th><th>合計<br>295 筆</th></tr></thead>
+<thead><tr><th>CPU model</th><th>Google Sheets<br>206 筆</th><th>Google Sheets 以外<br>114 筆</th><th>合計<br>320 筆</th></tr></thead>
 <tbody>
-<tr><td>9800X3D</td><td>139（67.48%）</td><td>40（44.94%）</td><td>179（60.68%）</td></tr>
-<tr><td>9950X3D</td><td>30（14.56%）</td><td>10（11.24%）</td><td>40（13.56%）</td></tr>
-<tr><td>7800X3D</td><td>28（13.59%）</td><td>8（8.99%）</td><td>36（12.20%）</td></tr>
-<tr><td>9700X</td><td>0（0%）</td><td>12（13.48%）</td><td>12（4.07%）</td></tr>
-<tr><td>9600X</td><td>0（0%）</td><td>8（8.99%）</td><td>8（2.71%）</td></tr>
-<tr><td>7950X3D</td><td>5（2.43%）</td><td>3（3.37%）</td><td>8（2.71%）</td></tr>
-<tr><td>9800X3DS</td><td>2（0.97%）</td><td>0（0%）</td><td>2（0.68%）</td></tr>
-<tr><td>7900X3D</td><td>1（0.49%）</td><td>0（0%）</td><td>1（0.34%）</td></tr>
-<tr><td>9850X3D</td><td>0（0%）</td><td>1（1.12%）</td><td>1（0.34%）</td></tr>
-<tr><td>9900X</td><td>0（0%）</td><td>2（2.25%）</td><td>2（0.68%）</td></tr>
-<tr><td>9900X3D</td><td>1（0.49%）</td><td>0（0%）</td><td>1（0.34%）</td></tr>
-<tr><td>7600</td><td>0（0%）</td><td>1（1.12%）</td><td>1（0.34%）</td></tr>
-<tr><td>7600X3D</td><td>0（0%）</td><td>1（1.12%）</td><td>1（0.34%）</td></tr>
-<tr><td>7700</td><td>0（0%）</td><td>1（1.12%）</td><td>1（0.34%）</td></tr>
-<tr><td>7700X</td><td>0（0%）</td><td>1（1.12%）</td><td>1（0.34%）</td></tr>
-<tr><td>7900X</td><td>0（0%）</td><td>1（1.12%）</td><td>1（0.34%）</td></tr>
-<tr><td>合計</td><td>206（100%）</td><td>89（100%）</td><td>295（100%）</td></tr>
+<tr><td>9800X3D</td><td>139（67.48%）</td><td>52（45.61%）</td><td>191（59.69%）</td></tr>
+<tr><td>9950X3D</td><td>30（14.56%）</td><td>16（14.04%）</td><td>46（14.38%）</td></tr>
+<tr><td>7800X3D</td><td>28（13.59%）</td><td>8（7.02%）</td><td>36（11.25%）</td></tr>
+<tr><td>9700X</td><td>0（0%）</td><td>14（12.28%）</td><td>14（4.38%）</td></tr>
+<tr><td>9600X</td><td>0（0%）</td><td>9（7.89%）</td><td>9（2.81%）</td></tr>
+<tr><td>7950X3D</td><td>5（2.43%）</td><td>3（2.63%）</td><td>8（2.50%）</td></tr>
+<tr><td>9800X3DS</td><td>2（0.97%）</td><td>0（0%）</td><td>2（0.62%）</td></tr>
+<tr><td>7900X3D</td><td>1（0.49%）</td><td>1（0.88%）</td><td>2（0.62%）</td></tr>
+<tr><td>9850X3D</td><td>0（0%）</td><td>2（1.75%）</td><td>2（0.62%）</td></tr>
+<tr><td>9900X</td><td>0（0%）</td><td>2（1.75%）</td><td>2（0.62%）</td></tr>
+<tr><td>9900X3D</td><td>1（0.49%）</td><td>0（0%）</td><td>1（0.31%）</td></tr>
+<tr><td>7600</td><td>0（0%）</td><td>1（0.88%）</td><td>1（0.31%）</td></tr>
+<tr><td>7600X</td><td>0（0%）</td><td>1（0.88%）</td><td>1（0.31%）</td></tr>
+<tr><td>7600X3D</td><td>0（0%）</td><td>1（0.88%）</td><td>1（0.31%）</td></tr>
+<tr><td>7700</td><td>0（0%）</td><td>1（0.88%）</td><td>1（0.31%）</td></tr>
+<tr><td>7700X</td><td>0（0%）</td><td>1（0.88%）</td><td>1（0.31%）</td></tr>
+<tr><td>7900X</td><td>0（0%）</td><td>1（0.88%）</td><td>1（0.31%）</td></tr>
+<tr><td>9950X</td><td>0（0%）</td><td>1（0.88%）</td><td>1（0.31%）</td></tr>
+<tr><td>合計</td><td>206（100%）</td><td>114（100%）</td><td>320（100%）</td></tr>
 </tbody></table></div>
-<p class="small">註：Google Sheets、Google Sheets 以外案例與合計的分母分別為 206、89、295；已排除設定後恢復者。Google Sheets 母表的 CPU 型號名稱依試算表原值保留，其中 <code>9800X3DS</code> 為母表原始值；表外案例依 Reddit 原文正規化型號名稱。百分比四捨五入至小數點後兩位。</p>
+<p class="small">註：Google Sheets、Google Sheets 以外案例與合計的分母分別為 206、114、320；已排除設定後恢復案例。Google Sheets 母表的 CPU 型號名稱依試算表原值保留，其中 <code>9800X3DS</code> 為母表原始值；表外案例依 Reddit 原文正規化型號名稱。百分比四捨五入至小數點後兩位。</p>
 </section>
 
 <section class="card">
-<h2>整合案例表（依日期由新到舊、來源 URL 去重）</h2>
+<h2>整合案例表（依日期由新到舊、排除重複來源網址）</h2>
 <p>參照檔案：<a href="https://docs.google.com/spreadsheets/d/144FB3ZXgIE8o7gQi5_22JkWR8xa_HIRSxt3c52X06Us/edit?gid=1732278388#gid=1732278388" target="_blank" rel="noopener">DEAD X3D FROM 24 JUNE 2025</a>；比對分頁：<b>Global results</b>、<b>Detailed results (X3D Fails)</b>。</p>
-<p>本表整合 Google Sheets 母表、逐筆核對後的外部補充案例，以及「設定後恢復」案例；所有列均依 Reddit <code>created_utc</code> 轉為台灣時間、按日期由新到舊排列，並以貼文／留言 URL 去重。母表原始 Detailed results 為 207 筆貼文；下方整合表保留來源與判讀證據，供回查，不能視為故障率母體。</p>
-<p class="small"><b>案例類別：</b>「CPU 燒毀」須有原文的實體燒痕、膨脹、焦痕或變色證據；「CPU 死亡」須有明確死亡敘述或交叉測試、替換 CPU、RMA、店家測試等確認；未確認死亡、但原文明確顯示 POST／Q-Code／Debug 00 或 0x00 者列「POST Code 00」；其他無法 POST、黑畫面或 CPU／DRAM 燈者列「不能開機」。原 CPU 在調整 BIOS、CMOS、記憶體或其他設定後恢復正常開機／使用者列「設定後恢復（不計入 CPU 故障統計）」，不論原先是否顯示 00。</p>
+<p>本表整合 Google Sheets 母表、逐筆核對後的外部補充案例，以及「設定後恢復」案例；所有列均依 Reddit <code>created_utc</code> 轉為台灣時間、按日期由新到舊排列，並依貼文／留言網址排除重複資料。母表原始 Detailed results 為 207 筆貼文；下方整合表保留來源與判讀證據，供回查，不能視為故障率母體。</p>
+<p class="small"><b>案例類別：</b>「CPU 燒毀」須有原文的實體燒痕、膨脹、焦痕、變色證據，或使用者第一人稱明確表示 CPU was burn／burned；「CPU 死亡」須有明確死亡敘述或交叉測試、替換 CPU、RMA、店家測試等確認；未確認死亡、但原文明確顯示 POST／Q-Code／Debug 00 或 0x00 者列「POST Code 00」；其他無法 POST、黑畫面或 CPU／DRAM 燈者列「不能開機」。原 CPU 在調整 BIOS、CMOS、記憶體或其他設定後恢復，或交叉測試確認可正常開機者，列「設定後恢復（不計入 CPU 故障統計）」。</p>
 <div class="case-filter"><label for="case-category-filter">案例類別</label><select id="case-category-filter"><option value="all">全部類別</option><option value="CPU 燒毀">CPU 燒毀</option><option value="CPU 死亡">CPU 死亡</option><option value="POST Code 00">POST Code 00</option><option value="不能開機">不能開機</option><option value="設定後恢復（不計入 CPU 故障統計）">設定後恢復（不計入 CPU 故障統計）</option></select><label for="case-board-filter">主機板品牌</label><select id="case-board-filter"><option value="all">全部品牌</option></select><span id="case-filter-count" class="case-filter-count" aria-live="polite"></span></div>
 <div class="scroll combined-scroll"><table id="combined-cases">
 <thead><tr><th>發文時間（台灣）</th><th>Reddit 使用者</th><th>CPU</th><th>主機板</th><th>Subreddit</th><th>原文標題</th><th>案例類別</th><th>原文證據</th><th>信心／位置</th></tr></thead>
@@ -189,8 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // 不限是否出現 Q-Code 00；替換成另一顆 CPU 後恢復不屬於此排除條件。
   const recoveredAfterSettings = new Set([
     'https://reddit.com/r/ASRock/comments/1kmirk4',
-    'https://reddit.com/r/ASRock/comments/1r5kcjh/bios_403_7900x3d_asrock_b650i_apply_ramcpubios',
-    'https://reddit.com/r/ASRock/comments/1vrfpfe/it_happened/p4gmgm0'
+    'https://reddit.com/r/ASRock/comments/1r5kcjh/bios_403_7900x3d_asrock_b650i_apply_ramcpubios'
   ]);
   const isRecoveredAfterSettings = function (url) {
     return recoveredAfterSettings.has(normalize(url || ''));
@@ -329,6 +330,31 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   const newCases = [
     {time:'2026-08-20 01:05:26',author:'eci22',cpu:'Ryzen 7 7800X3D',board:'Gigabyte B650 EAGLE AX',sub:'r/pchelp',title:'PC froze, wont boot anymore, dram light is on',category:'不能開機',evidence:'“It just will not post anymore the dram led stays on and no signal to the screen.”；已更新 BIOS、清除／更換 CMOS 電池、逐槽測試兩條 RAM、移除 GPU 與 NVMe，並替換 PSU，仍無法 POST；作者尚未能以另一套 AM5 平台確認 CPU。',position:'貼文正文／中高',url:'https://www.reddit.com/r/pchelp/comments/1vssf69/pc_froze_wont_boot_anymore_dram_light_is_on/',isNew:true},
+    {time:'2026-08-09 02:14:34',author:'TomatilloIcy2518',cpu:'Ryzen 9 9950X3D',board:'ASUS（型號未註明）',sub:'r/ASRock',title:'Another one bites the dust: 9800X3D DEAD after 6 months on ASRock B850 Steel Legend.',category:'CPU 死亡',evidence:'“Friend of mine also had his 9950x3d die after one year in his Asus motherboard. Cpu has been replaced under warranty.”',position:'留言／保固替換／中高',url:'https://www.reddit.com/r/ASRock/comments/1vhhnxs/comment/p2i4fav/',isNew:true},
+    {time:'2026-08-07 06:04:46',author:'Gamma--Gamer',cpu:'Ryzen 7 9800X3D',board:'ASRock B850 Steel Legend',sub:'r/ASRock',title:'Another one bites the dust: 9800X3D DEAD after 6 months on ASRock B850 Steel Legend.',category:'CPU 死亡',evidence:'“Mine died yesterday too”；使用者表示已聯絡 AMD RMA，並明確說明主機板為 “My 850 Steel Legend”。',position:'留言／RMA／中高',url:'https://www.reddit.com/r/ASRock/comments/1vhhnxs/comment/p25e49v/',isNew:true},
+    {time:'2026-08-07 05:42:32',author:'Icy-Sir-6772',cpu:'Ryzen 7 9800X3D',board:'ASRock B850 Steel Legend',sub:'r/ASRock',title:'Another one bites the dust: 9800X3D DEAD after 6 months on ASRock B850 Steel Legend.',category:'CPU 死亡',evidence:'作者明確指出這是朋友的另一筆案例：“A few months ago my own CPU died ... and now the exact same thing has happened to one of my close friends.”；朋友的電腦凍結後固定紅色 CPU 燈，排查及替換元件後 “everything points to the CPU being dead”。',position:'貼文正文／獨立於作者 3 月本人案例／中高',url:'https://www.reddit.com/r/ASRock/comments/1vhhnxs/another_one_bites_the_dust_9800x3d_dead_after_6/',isNew:true},
+    {time:'2026-08-06 19:24:41',author:'Ethre',cpu:'Ryzen 7 9800X3D',board:'ASRock B850I（完整型號未註明）',sub:'r/ASRock',title:'Dead 9800x3D - b850i',category:'CPU 死亡',evidence:'標題明確為 “Dead 9800x3D - b850i”；使用約 12 個月後遊戲中突然重新啟動，之後無顯示，作者已申請主機板與 CPU RMA。',position:'貼文正文／明確死亡敘述／中高',url:'https://www.reddit.com/r/ASRock/comments/1vh1hs9/dead_9800x3d_b850i/',isNew:true},
+    {time:'2026-08-04 08:15:05',author:'frostrambler',cpu:'Ryzen 7 9800X3D',board:'ASRock X870E Nova',sub:'r/ASRock',title:'Goodbye ASRock - another X870e Nova and 9800X3d death',category:'CPU 死亡',evidence:'標題明確稱 “9800X3d death”；錯誤碼 03 後不再恢復，作者同時申請 CPU／主機板 RMA，並已購買另一顆 9800X3D 與 MSI X870E 主機板替換。',position:'貼文正文／RMA／中高',url:'https://www.reddit.com/r/ASRock/comments/1veun5s/goodbye_asrock_another_x870e_nova_and_9800x3d/',isNew:true},
+    {time:'2026-07-31 16:12:42',author:'heikkiiii',cpu:'Ryzen 7 9800X3D',board:'ASRock X870 Riptide',sub:'r/ASRock',title:'Dead 9800X3D on ASRock B850 Pro RS WiFi. Should I trust and update to the latest BIOS 4.43 or swap boards?',category:'CPU 死亡',evidence:'“My 9800x3d had died”；遊戲中凍結後固定 CPU 燈且無法開機，CPU 與主機板送保後 “cpu was claimed defective”，準備領取替換品。',position:'留言／保固檢測／高',url:'https://www.reddit.com/r/ASRock/comments/1vb882w/comment/p0u1nnx/',isNew:true},
+    {time:'2026-07-31 14:37:22',author:'shawzy007',cpu:'Ryzen 7 9700X',board:'ASRock B850 Pro RS WiFi',sub:'r/ASRock',title:'Dead 9800X3D on ASRock B850 Pro RS WiFi. Should I trust and update to the latest BIOS 4.43 or swap boards?',category:'CPU 死亡',evidence:'“I have same board.”；全新 9700X 使用不到 24 小時，已送 RMA。此處主機板型號依留言明確指稱與主文相同。',position:'留言／RMA／中',url:'https://www.reddit.com/r/ASRock/comments/1vb882w/comment/p0tpodl/',isNew:true},
+    {time:'2026-07-31 09:18:48',author:'WTaufE100',cpu:'Ryzen 7 9700X',board:'ASRock B850 Pro RS',sub:'r/ASRock',title:'Dead 9800X3D on ASRock B850 Pro RS WiFi. Should I trust and update to the latest BIOS 4.43 or swap boards?',category:'CPU 死亡',evidence:'“I built a PC for a friend with the B850 Pro RS (no WIFI). Her 9700X died last week.”；並已裝上替換 9700X。',position:'留言／明確死亡敘述／中高',url:'https://www.reddit.com/r/ASRock/comments/1vb882w/comment/p0scdjb/',isNew:true},
+    {time:'2026-07-31 07:04:42',author:'CrossBamboAtTen',cpu:'Ryzen 7 9800X3D',board:'ASRock X870E Nova WiFi',sub:'r/ASRock',title:'Dead 9800X3D on ASRock B850 Pro RS WiFi. Should I trust and update to the latest BIOS 4.43 or swap boards?',category:'CPU 死亡',evidence:'“my 9800X3D just died a few days ago”；正常關機後返家便不再 POST，使用者準備將 CPU 送 RMA。',position:'留言／RMA／中高',url:'https://www.reddit.com/r/ASRock/comments/1vb882w/comment/p0rngsv/',isNew:true},
+    {time:'2026-07-31 06:21:17',author:'Calm_Title_8203',cpu:'Ryzen 7 9800X3D',board:'ASRock B850 Pro RS WiFi',sub:'r/ASRock',title:'Dead 9800X3D on ASRock B850 Pro RS WiFi. Should I trust and update to the latest BIOS 4.43 or swap boards?',category:'CPU 死亡',evidence:'“My 9800X3D died”；紅／橘 CPU、DRAM 燈後，多項排錯無效；本機維修店測試後 “turns out that the CPU was actually dead”，並已向 AMD 申請 RMA。',position:'貼文正文／店家測試／高',url:'https://www.reddit.com/r/ASRock/comments/1vb882w/dead_9800x3d_on_asrock_b850_pro_rs_wifi_should_i/',isNew:true},
+    {time:'2026-07-21 05:09:29',author:'Dave_The_cow',cpu:'Ryzen 5 9600X',board:'ASRock B650M-HDV/M.2+',sub:'r/ASRock',title:'9600x dead on Asrock B650M-HDV/M.2+',category:'CPU 死亡',evidence:'“i\'ve had two 9600xs fried by the same board before i became aware of the issue”；同一使用者、同一留言雖提及兩顆 CPU，本表依案例來源計一筆。未提供實體燒痕證據。',position:'留言／明確死亡敘述／中高',url:'https://www.reddit.com/r/ASRock/comments/1u8yotf/comment/oyr0ea9/',isNew:true},
+    {time:'2026-07-15 05:00:31',author:'drsc0t',cpu:'Ryzen 7 9800X3D',board:'MSI X670E Carbon WiFi',sub:'r/pcmasterrace',title:'PC failing to post after redoing thermal paste',category:'POST Code 00',evidence:'更換 9800X3D 後 “I\'m now just getting debug code 00”；單條 RAM、iGPU、清 CMOS、BIOS 重刷及不同散熱器壓力均未恢復，尚未確認 CPU 死亡。',position:'貼文正文／中高',url:'https://www.reddit.com/r/pcmasterrace/comments/1uwl4wy/pc_failing_to_post_after_redoing_thermal_paste/',isNew:true},
+    {time:'2026-07-13 16:54:21',author:'6ty7er',cpu:'Ryzen 5 7600X',board:'MSI Tomahawk（完整型號未註明）',sub:'r/de_EDV',title:'Mysteriöser AM5-Fehler: Zerstört meine CPU (7800X3D) schleichend die Mainboards? (DRAM LED / Code 00)',category:'CPU 死亡',evidence:'舊 7600X 在 MSI Tomahawk 完全不開機，之後在另一張 ASRock 板亦出現相同故障；店家以多顆 AM5 CPU 驗證 MSI 板正常，新 7600X 裝上後系統恢復。',position:'留言／店家交叉測試／高',url:'https://www.reddit.com/r/de_EDV/comments/1uuqyhm/comment/ox8la18/',isNew:true},
+    {time:'2026-07-13 04:42:57',author:'MMeliodas25',cpu:'Ryzen 7 7800X3D',board:'ASUS ROG STRIX B850-E GAMING WIFI',sub:'r/de_EDV',title:'Mysteriöser AM5-Fehler: Zerstört meine CPU (7800X3D) schleichend die Mainboards? (DRAM LED / Code 00)',category:'設定後恢復（不計入 CPU 故障統計）',evidence:'原 CPU＋原主機板仍有 Code 00／開機異常；原 CPU＋另一張主機板可正常運作，新 CPU＋原主機板也可正常運作。交叉測試證明原 CPU 可以正常開機，因此不計入 CPU 故障統計。作者後續更正主機板為 B850-E。',position:'貼文正文／交叉測試／高',url:'https://www.reddit.com/r/de_EDV/comments/1uuqyhm/mysteriöser_am5fehler_zerstört_meine_cpu_7800x3d/',isNew:true},
+    {time:'2026-07-12 05:36:43',author:'baacke',cpu:'Ryzen 9 9950X3D',board:'ASRock B850 LiveMixer',sub:'r/ASRock',title:'JTC | Burned 9800X3D CPUs are back... and AMD isn\'t sure why.',category:'CPU 死亡',evidence:'“My 9950X3D finally died after ~15 months on a B850 Livemixer.”；逐漸惡化至完全不開機，並以新 CPU 確認 “the 9950X3D is dead”。',position:'留言／替換 CPU 對照／高',url:'https://www.reddit.com/r/ASRock/comments/1qv9h8r/comment/owytwph/',isNew:true},
+    {time:'2026-07-06 23:11:05',author:'DataGOGO',cpu:'Ryzen 9 9950X3D',board:'未註明',sub:'r/ASRock',title:'Guess What - Fried 9950x3d',category:'CPU 死亡',evidence:'“My launch day 9950X3D died in about a year.”；留言未註明主機板型號或廠牌。',position:'留言／明確死亡敘述／中',url:'https://www.reddit.com/r/ASRock/comments/1uor3v9/comment/ovw60jw/',isNew:true},
+    {time:'2026-07-06 21:00:31',author:'MasterpieceClassic42',cpu:'Ryzen 9 9950X',board:'ASRock（型號未註明）',sub:'r/ASRock',title:'Guess What - Fried 9950x3d',category:'CPU 死亡',evidence:'9950X 使用近一年後開始故障；換入另一台電腦的 CPU 後一切正常，AMD RMA 並寄回替換 CPU，使用者之後改用 ASUS 主機板。',position:'留言／替換 CPU 對照／高',url:'https://www.reddit.com/r/ASRock/comments/1uor3v9/comment/ovven2h/',isNew:true},
+    {time:'2026-07-06 16:12:56',author:'BruceDeorum',cpu:'Ryzen 9 9950X3D',board:'ASRock X870 Pro RS WiFi',sub:'r/ASRock',title:'Guess What - Fried 9950x3d',category:'CPU 死亡',evidence:'黑畫面後完全無法 POST，清 CMOS 與移除周邊均無效；送修服務據點明確診斷：“Its the CPU.”',position:'貼文正文／店家診斷／高',url:'https://www.reddit.com/r/ASRock/comments/1uor3v9/guess_what_fried_9950x3d/',isNew:true},
+    {time:'2026-07-05 20:34:38',author:'r3bus666',cpu:'Ryzen 7 9800X3D',board:'ASRock X870 Pro RS',sub:'r/ASRock',title:'Dead Ryzen 7 9800x3d on ASRock X870 Pro Rs (probably) -  sharing my experience and diagnostics',category:'CPU 燒毀',evidence:'使用者第一人稱明確表示：“my ryzen 9800 x3d was burn”；之後更換新 CPU，並因持續藍畫面／凍結而改換 Gigabyte 主機板。',position:'留言／使用者明確表示燒毀／中高',url:'https://www.reddit.com/r/ASRock/comments/1s3nwqj/comment/ovob728/',isNew:true},
+    {time:'2026-07-04 14:21:48',author:'Hackpizza',cpu:'Ryzen 7 9800X3D',board:'ASRock B850I Lightning WiFi',sub:'r/ASRock',title:'Second Ryzen 9000 CPU dead on ASRock B850I',category:'CPU 死亡',evidence:'“Meine Ryzen 98003dx ist auch gegrillt worden auf ein Asrock B850i Lightning wifi board.”；問題惡化至完全不開機，更換新 CPU 後恢復正常。未提供實體燒痕證據。',position:'留言／替換 CPU 對照／高',url:'https://www.reddit.com/r/ASRock/comments/1tesa04/comment/ovgln0n/',isNew:true},
+    {time:'2026-06-30 00:25:03',author:'McScrubber',cpu:'Ryzen 9 9950X3D',board:'ASUS ROG STRIX X870E-E GAMING WIFI',sub:'r/buildapc',title:'Dead 9950X3D',category:'CPU 死亡',evidence:'系統黑畫面並顯示 Code 00；BIOS Flashback 無效，換入另一顆 CPU 後正常開機。作者另明確說明 CPU 無實體燒痕。',position:'貼文正文／替換 CPU 對照／高',url:'https://www.reddit.com/r/buildapc/comments/1uix9z5/dead_9950x3d/',isNew:true},
+    {time:'2026-06-26 07:32:49',author:'RareSun671',cpu:'Ryzen 7 9800X3D',board:'ASUS Crosshair X870 Hero',sub:'r/AMDHelp',title:'9800x3d with x870e mobo won\'t post code 00',category:'POST Code 00',evidence:'突然無影像後主機板顯示 “error 00” 與固定橘燈；更換 RAM 插槽、單條測試及清 CMOS 後仍相同，尚待以另一顆 Ryzen 交叉測試。',position:'留言／中高',url:'https://www.reddit.com/r/AMDHelp/comments/1h1iltm/comment/otttxrj/',isNew:true},
+    {time:'2026-06-24 12:35:28',author:'Rockytag',cpu:'Ryzen 7 9800X3D',board:'ASUS X870E-PLUS',sub:'r/buildapc',title:'I scanned a full year of Reddit for X3D chips dying on AM5 boards (207 cases found, broken down by brand)',category:'CPU 死亡',evidence:'“Mine just died under load after 6 months. Asus X870E-PLUS, 9800x3d. Got an RMA for the cpu.”',position:'留言／RMA／中高',url:'https://www.reddit.com/r/buildapc/comments/1udvf1m/comment/otgtpkd/',isNew:true},
+    {time:'2026-06-24 07:09:05',author:'Ambitious_Worry2590',cpu:'Ryzen 9 9950X3D',board:'ASUS ProArt（完整型號未註明）',sub:'r/buildapc',title:'I scanned a full year of Reddit for X3D chips dying on AM5 boards (207 cases found, broken down by brand)',category:'CPU 死亡',evidence:'“Mine just died after a month! 9950x3D on an Asus Proart board.”；正常使用一個月，關機一晚後隔日無法開機。',position:'留言／明確死亡敘述／中',url:'https://www.reddit.com/r/buildapc/comments/1udvf1m/comment/otf8w7f/',isNew:true},
+    {time:'2026-06-24 04:58:37',author:'No_Charge4064',cpu:'Ryzen 9 7900X3D',board:'MSI（型號未註明）',sub:'r/MSI_Gaming',title:'The dreaded burn mark finally hit me',category:'CPU 死亡',evidence:'“popped in my MSI board and bang! Fried both the board and CPU on first boot.”；未提供實體燒痕證據，故列 CPU 死亡。',position:'留言／明確故障敘述／中',url:'https://www.reddit.com/r/MSI_Gaming/comments/1ud9ewb/comment/otegu7c/',isNew:true},
     {time:'2026-06-23 23:14:30',author:'Left-Instruction3885',cpu:'Ryzen 9 7950X3D',board:'ASUS B650E-F',sub:'r/MSI_Gaming',title:'The dreaded burn mark finally hit me',category:'CPU 死亡',evidence:'「My 7950x3d died on my Asus B650E-F」；換裝 7600X 後同一張主機板正常，因此作者確認原 CPU 死亡。作者另明說：「No burn marks on my 7950x3d or anything either」。',position:'留言／替換 CPU 對照／高',url:'https://www.reddit.com/r/MSI_Gaming/comments/1ud9ewb/comment/otc8x6d/'},
     {time:'2026-07-29 06:07:23',author:'Physical-Weather545',cpu:'Ryzen 7 9800X3D',board:'ASRock X870 Steel Legend WiFi',sub:'r/AMDHelp',title:'Second 9800x3d dead',category:'CPU 死亡',evidence:'“Today the 9800x3d I got from rma on my first one died. Exactly one month after the first one died.”；第二顆使用最新穩定 BIOS、未啟用 XMP，CPU、主機板與 PSU 已送保固檢查。',position:'貼文正文／高',url:'https://www.reddit.com/r/AMDHelp/comments/1v9cu6p/second_9800x3d_dead/'},
     {time:'2026-07-29 07:14:50',author:'Nearby-Safety-122',cpu:'Ryzen 7 9800X3D',board:'ASRock Taichi（晶片組未註明）',sub:'r/AMDHelp',title:'Second 9800x3d dead',category:'CPU 死亡',evidence:'“I\'ve had my taichi for a year and a half, killed my pre ordered 9800x3d.”；之後改用 MSI X870E MEG ACE。',position:'留言／中高',url:'https://www.reddit.com/r/AMDHelp/comments/1v9cu6p/comment/p0d3gyn/'},

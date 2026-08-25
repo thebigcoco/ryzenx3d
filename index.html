@@ -27,13 +27,14 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 #combined-cases td:nth-child(1){white-space:nowrap}.case-time{display:block;color:var(--muted)}
 .case-filter{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0;padding:10px 12px;background:#f3f7fb;border:1px solid var(--line);border-radius:8px}
 .case-filter label{font-weight:700;color:#174a75}.case-filter select{font:inherit;color:var(--ink);background:#fff;border:1px solid #b9c7d6;border-radius:6px;padding:7px 30px 7px 9px}.case-filter-count{color:var(--muted);font-size:13px}
+.revision-table{min-width:760px}.revision-table td:first-child{white-space:nowrap;font-weight:700;color:var(--blue)}.revision-table ul{margin:0 0 0 18px;padding:0}
 </style>
 </head>
 <body>
 <main>
 <header>
 <div class="brand-row"><img class="report-icon" src="assets/burnt-coconut-icon.png" width="58" height="58" alt="剖開並燒焦冒煙的椰子圖示"><h1>Reddit - Ryzen 7000／9000 系列CPU 燒毀與CPU壞掉/POST Code 00 不開機案例</h1></div>
-<p class="meta">上次更新日期：2026-08-20</p>
+<p class="meta">版本：v1.2　｜　上次更新日期：2026-08-20</p>
 <p class="meta">搜尋及整理日期：2026-08-24 17:21（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-08-24　｜　平台：Reddit 公開貼文與留言</p>
 <p>本報告整理 AMD Ryzen 7000／9000 桌上型 CPU 的公開 Reddit 貼文與留言，時間範圍自 2024-01-01 起。整合案例表依原文證據分為燒毀、確認 CPU 死亡、POST Code 00 與不能開機。設定後恢復、已通過 CPU／DRAM 階段、CPU 可進 BIOS／Windows／換板後正常，或沒有實際 CPU 故障事件者，均不納入整合案例表及 CPU 故障統計。案例數僅為公開回報彙整，不代表產品故障率或因果關係。</p>
 </header>
@@ -165,6 +166,17 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <li>2024-01-01 前的案例不列入；Ryzen 3000/5000、筆電 Ryzen、Ryzen 8000G 排除。無論是否顯示 00，原 CPU 經設定修正後恢復、CPU／DRAM 階段已通過、CPU 可進 BIOS／Windows／換板後正常，或沒有實際 CPU 故障事件者，均不納入整合案例表與 CPU 故障統計。</li>
 <li>「VSOC 1.2～1.3V」等設定是使用者回報，並非本報告對安全電壓的建議；報告不替 Reddit 留言中的因果推論背書。</li>
 </ul>
+</section>
+<section class="card" id="revision-history">
+<h2>Revision History</h2>
+<div class="scroll"><table class="revision-table">
+<thead><tr><th>版本</th><th>日期</th><th>類型</th><th>主要變更</th></tr></thead>
+<tbody>
+<tr><td>v1.2</td><td>2026-08-24</td><td>小改版</td><td><ul><li>重新複核不能開機案例，移除設定後恢復、已通過 CPU／DRAM 階段、CPU 可進 BIOS／Windows／換板後正常，以及沒有實際 CPU 故障事件的資料。</li><li>整合案例表保留 197 筆 Google Sheets 案例與 130 筆表外案例，合計 327 筆；同步重算案例類別、主機板廠牌與 CPU 型號統計。</li><li>補充排除日期、母表 207 筆的移除條件、上次更新日期、版本編號及修訂紀錄。</li></ul></td></tr>
+<tr><td>v1.1</td><td>2026-08-20</td><td>小改版</td><td><ul><li>將明確顯示 Q-Code／POST／Debug 00 的案例與其他不能開機案例拆分為獨立類別。</li><li>加入「設定後恢復」與交叉測試排除原則，並依最終測試結果重新判定案例。</li><li>精簡搜尋關鍵字與篩選規則，更新案例類別統計與統計標題。</li></ul></td></tr>
+</tbody>
+</table></div>
+<p class="small">版本規則：v1、v2…代表大改版；v1.1、v1.2…代表小改版。</p>
 </section>
 <footer>資料來源均連至 Reddit 原始貼文；內容為公開網路案例彙整，非 AMD、主機板廠商或實驗室的故障率報告。</footer>
 </main>

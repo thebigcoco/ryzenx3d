@@ -42,11 +42,9 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <section class="card">
 <h2>本次更新摘要（2026-09-03）</h2>
 <ul>
-<li>依既有 CPU 型號與故障關鍵字規則，重新搜尋 2026-09-02 之後新發表的 Reddit 貼文與留言。中小型 subreddit（ASRock、ASUS、MSI_Gaming、AMDHelp、PcBuildHelp、pcbuilding 等）以第三方檢索 API（arctic-shift）查詢；pcmasterrace、buildapc 因該 API 查詢不穩定，改於瀏覽器直接在 reddit.com 站內搜尋（sort=new、restrict_sr、t=week）補查，藉此找到 1 筆先前 API 搜尋遺漏的案例。</li>
-<li>新增 3 筆表外案例：不能開機 2 筆（Ryzen 7 9800X3D／ASRock X870 Steel Legend WiFi，黑屏、CPU 與 GPU 燈皆轉紅，尚未決定向 ASRock 或 AMD 申請 RMA；Ryzen 7 7800X3D／ASRock Phantom Gaming X870E Nova WiFi，卡在 Dr. Debug 4d，排查逾一小時仍無畫面）；POST Code 00 1 筆（Ryzen 7 9800X3D／ASRock X870E Nova WiFi，r/pcmasterrace，重開機後卡在 Code 00，重裝 CPU 後針腳無燒痕，尚無最終結果）。</li>
-<li>整合案例表更新為 338 筆（Google Sheets 197、表外 141），同步重算案例類別、主機板廠牌及 CPU 型號分布；僅本次新增列標示 New!，統計表中較上一版（v1.4）有變動的數字另以 New!／原數值 標示。</li>
-<li>後續針對 pcmasterrace、buildapc 等大型 subreddit 的搜尋將優先採用瀏覽器直接搜尋，第三方 API 僅作為輔助核對案例細節（作者、時間、原文）之用，以降低漏搜風險。</li>
-<li>回查表外「不能開機」與「POST Code 00」共 36 筆尚未確認案例的原始討論串是否有後續結果：4 筆確認 CPU 死亡（imp3rd1349、djshiye〔改列 CPU 燒毀〕、AnarchyZ0、Breach13）、1 筆確認排除 CPU 故障（1ptpalv，作者證實是散熱器問題，CPU 沒事）；其餘 31 筆仍無公開後續結果。整合案例表因此再調整為 337 筆（Google Sheets 197、表外 140）。</li>
+<li>新增 3 筆表外案例：不能開機 2 筆（Ryzen 7 9800X3D／ASRock X870 Steel Legend WiFi；Ryzen 7 7800X3D／ASRock Phantom Gaming X870E Nova WiFi）；POST Code 00 1 筆（Ryzen 7 9800X3D／ASRock X870E Nova WiFi）。</li>
+<li>回查表外「不能開機」與「POST Code 00」共 36 筆尚未確認案例的後續結果：4 筆確認 CPU 死亡（imp3rd1349、djshiye〔改列 CPU 燒毀〕、AnarchyZ0、Breach13）、1 筆確認排除 CPU 故障（1ptpalv）；其餘 31 筆仍無公開後續結果。</li>
+<li>整合案例表更新為 337 筆（Google Sheets 197、表外 140），同步重算案例類別、主機板廠牌及 CPU 型號分布；本次新增列標示 New!，狀態有變化的案例標示「狀態更新」，統計表中有變動的數字另以 New!／原數值 標示。</li>
 </ul>
 </section>
 
@@ -59,6 +57,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <li><b>納入原則：</b>限 Ryzen 7000／9000 桌上型 CPU；逐篇閱讀原文及相關留言，只記錄明確提供的型號、主機板、時間、症狀與結果，未提供者標示「未註明」。PRO、Threadripper、行動版及 Ryzen 8000G 排除。</li>
 <li><b>排除原則：</b>原 CPU 經 BIOS／CMOS／記憶體設定修正後恢復者記錄為「設定後恢復」；CPU／DRAM 階段已通過而停在 VGA／BOOT、CPU 可進 BIOS／Windows／換板後正常，或沒有實際故障事件者記錄為「排除 CPU 故障」。兩類均從整合案例表與 CPU 故障統計移除；後續交叉測試若確認 CPU 死亡，則以確認結果為準。</li>
 <li><b>去除重複：</b>同一網址先正規化；同一使用者跨貼重述同一事件只計一次，同一貼文中不同使用者的獨立故障則分別列入。</li>
+<li><b>後續結果回查：</b>每次更新除搜尋新案例外，均需回查表外「不能開機」與「POST Code 00」（尚未確認 CPU 是否死亡）案例的原始討論串，確認是否已有後續結果；若有，依判讀原則重新分類，並依「判讀與限制」所述標示「狀態更新」。</li>
 </ul>
 </section>
 

@@ -161,7 +161,7 @@ $html = [regex]::Replace($html, '<p>母表的 Detailed results 共 <b>207 筆貼
 $html = $html.Replace('<p class="small">下列引文保留 Reddit 原文，僅摘錄能直接支持 CPU 型號、主機板、故障現象或驗證結果的短句；「正文／留言」表示引文所在位置。</p>', '<p class="small">下列引文保留 Reddit 原文；時間以 <code>created_utc</code> 轉為台灣時間（UTC+8）。貼文作者直接取自貼文 metadata；留言作者以真實 comment ID 核對。舊 megathread 有 1 筆未保留 comment ID，明確標示為「留言作者未確認」。</p>')
 
 $generatedAt = [DateTimeOffset]::Now.ToOffset($taipeiOffset).ToString('yyyy-MM-dd HH:mm')
-$html = [regex]::Replace($html, '搜尋及整理日期：\d{4}-\d{2}-\d{2} \d{2}:\d{2}', '搜尋及整理日期：' + $generatedAt, 1)
+$html = [regex]::Replace($html, '本次整理日期：\d{4}-\d{2}-\d{2} \d{2}:\d{2}', '本次整理日期：' + $generatedAt, 1)
 
 [System.IO.File]::WriteAllText($indexPath, $html, [System.Text.UTF8Encoding]::new($false))
 $meta = Get-Content -Raw $metaPath | ConvertFrom-Json

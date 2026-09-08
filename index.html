@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-09-07 Reddit - Ryzen 7000／9000 系列CPU 燒毀與CPU壞掉/POST Code 00 不開機案例</title>
+<title>2026-09-08 Reddit - Ryzen 7000／9000 系列CPU 燒毀與CPU壞掉/POST Code 00 不開機案例</title>
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/burnt-coconut-icon.png">
 <style>
 :root{color-scheme:light;--ink:#1f2937;--muted:#64748b;--line:#dbe3ec;--blue:#0f4c81;--red:#a12b2b;--amber:#8a5a00;--green:#176b45}
 body{font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;line-height:1.65;color:var(--ink);background:#f5f7fa;margin:0}
-main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:18px;box-shadow:0 2px 8px #0f172a0b} h1{font-size:28px;line-height:1.25;margin:0 0 10px;color:var(--blue)} h2{font-size:21px;color:var(--blue);margin:0 0 12px} p{margin:7px 0}.meta{color:var(--muted);font-size:14px}.note{background:#fff8e7;border-left:4px solid #d49b18;padding:12px 14px;border-radius:6px}.danger{color:var(--red);font-weight:700}.good{color:var(--green);font-weight:700}.tag{display:inline-block;border-radius:999px;padding:2px 9px;margin:2px 4px 2px 0;font-size:12px;font-weight:700;background:#e8eef6;color:#24496d}.tag.red{background:#fde8e8;color:#972c2c}.tag.newmark{background:#fde8e8;color:#972c2c}.tag.amber{background:#fff1c9;color:#805400}.tag.green{background:#dff5e9;color:#176b45}.scroll{overflow-x:auto} table{border-collapse:collapse;width:100%;font-size:14px;min-width:1050px} th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top;text-align:left} th{background:#edf3f9;color:#174a75;position:sticky;top:0} tr:nth-child(even){background:#fbfcfe} a{color:#075ea8;text-decoration:none} a:hover{text-decoration:underline}.small{font-size:13px;color:var(--muted)} ul{margin:8px 0 8px 22px} footer{color:var(--muted);font-size:13px;padding:4px 4px 20px}
+main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:18px;box-shadow:0 2px 8px #0f172a0b} h1{font-size:28px;line-height:1.25;margin:0 0 10px;color:var(--blue)} h2{font-size:21px;color:var(--blue);margin:0 0 12px} p{margin:7px 0}.meta{color:var(--muted);font-size:14px}.note{background:#fff8e7;border-left:4px solid #d49b18;padding:12px 14px;border-radius:6px}.danger{color:var(--red);font-weight:700}.good{color:var(--green);font-weight:700}.tag{display:inline-block;border-radius:999px;padding:2px 9px;margin:2px 4px 2px 0;font-size:12px;font-weight:700;background:#e8eef6;color:#24496d}.tag.red{background:#fde8e8;color:#972c2c}.tag.newmark{background:#fde8e8;color:#972c2c}.tag.amber{background:#fff1c9;color:#805400}.tag.green{background:#dff5e9;color:#176b45}.scroll{overflow-x:auto} table{border-collapse:collapse;width:100%;font-size:14px;min-width:1050px} th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top;text-align:left} th{background:#edf3f9;color:#174a75;position:sticky;top:0} tr:nth-child(even){background:#fbfcfe} a{color:#075ea8;text-decoration:none} a:hover{text-decoration:underline}.small{font-size:13px;color:var(--muted)} ul{margin:8px 0 8px 22px} ol{margin:6px 0 6px 22px} footer{color:var(--muted);font-size:13px;padding:4px 4px 20px}
 .brand-row{display:flex;align-items:center;gap:11px}.report-icon{width:58px;height:58px;object-fit:contain;flex:0 0 auto}.brand-row h1{margin:0}@media(max-width:700px){.brand-row{align-items:flex-start;gap:7px}.report-icon{width:48px;height:48px}.brand-row h1{font-size:23px}}
 #combined-cases{width:100%;min-width:0;table-layout:fixed;font-size:14px;line-height:1.55}
 .combined-scroll{overflow-x:visible}
@@ -36,17 +36,22 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <main>
 <header>
 <div class="brand-row"><img class="report-icon" src="assets/burnt-coconut-icon.png" width="58" height="58" alt="剖開並燒焦冒煙的椰子圖示"><h1>Reddit - Ryzen 7000／9000 系列CPU 燒毀與CPU壞掉/POST Code 00 不開機案例</h1></div>
-<p class="meta">版本：v1.6　｜　上次更新日期：2026-09-07 17:41</p>
-<p class="meta">本次整理日期：2026-09-07 17:42（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-09-07　｜　平台：Reddit 公開貼文與留言</p>
+<p class="meta">版本：<a href="#revision-history">v1.6</a>　｜　上次更新日期：2026-09-07 17:42</p>
+<p class="meta">本次整理日期：2026-09-08 09:08（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-09-08　｜　平台：Reddit 公開貼文與留言</p>
 <p>本報告整理 AMD Ryzen 7000／9000 桌上型 CPU 的公開 Reddit 貼文與留言，時間範圍自 2024-01-01 起。整合案例表依原文證據分為燒毀、確認 CPU 死亡、POST Code 00 與不能開機。設定後恢復、已通過 CPU／DRAM 階段、CPU 可進 BIOS／Windows／換板後正常，或沒有實際 CPU 故障事件者，均不納入整合案例表及 CPU 故障統計。案例數僅為公開回報彙整，不代表產品故障率或因果關係。</p>
 </header>
 
 <section class="card">
-<h2>本次更新摘要（2026-09-07）</h2>
+<h2>本次更新摘要（2026-09-08）</h2>
 <ul>
-<li>新增 4 筆表外案例：不能開機 3 筆（Ryzen 7 9800X3D／ASRock X870E Nova，發文時間 2026-09-06 02:41:42；Ryzen 7 9800X3D／ASRock B850 LiveMixer WiFi，發文時間 2026-09-05 23:18:21；Ryzen 5 7600／ASRock B650M-HDV/M.2，發文時間 2026-09-05 02:28:26）；POST Code 00 1 筆（Ryzen 7 9800X3D／ASRock X870E Taichi，發文時間 2026-09-04 12:07:32）。</li>
-<li>回查既有表外「不能開機」與「POST Code 00」案例後續結果：逐筆核對全部 35 筆案例的討論串，本次未發現新的公開後續結果，維持原判定。</li>
-<li>整合案例表更新為 342 筆（Google Sheets 197、表外 145），同步重算案例類別、主機板廠牌及 CPU 型號分布；本次新增列標示 New!，統計表中有變動的數字另以 New!／原數值 標示。</li>
+<li>新增 2 筆表外案例，均為確認 CPU 死亡：
+<ol>
+<li>發文時間 2026-09-08 05:17:37，Ryzen 7 9800X3D／ASRock X870E Nova，換新 CPU 後直接開機，確認原 CPU 故障，無燒痕。</li>
+<li>發文時間 2026-09-08 04:03:34，Ryzen 5 9600X／ASRock B650 PG Lightning，經維修店鑑定確認 CPU 故障，賣家同意保固換貨。</li>
+</ol>
+</li>
+<li>回查既有表外「不能開機」與「POST Code 00」案例後續結果：重點抽查近期活躍討論串（含 9/7 新增的 4 筆），本次未發現新的公開後續結果，維持原判定。</li>
+<li>整合案例表更新為 344 筆（Google Sheets 197、表外 147），同步重算案例類別、主機板廠牌及 CPU 型號分布；本次新增列標示 New!，統計表中有變動的數字另以 New!／原數值 標示。</li>
 </ul>
 </section>
 
@@ -110,56 +115,56 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <p class="small">依整合案例表（含 Google Sheets 母表與表外案例）中「有證據燒掉」與「確認 CPU 死亡」兩類案例的發文／留言月份統計；柱狀圖為兩類堆疊顯示，柱頂數字為當月加總。月份依 Reddit <code>created_utc</code> 換算台灣時間認定；資料仍為公開回報彙整，不代表故障率隨月份的變化趨勢。</p>
 <div class="scroll"><div id="monthly-chart"></div></div>
 <h3>3. CPU 故障案例類別統計（已排除設定後恢復與非 CPU 故障）</h3>
-<p>CPU 故障統計共 342 筆：Google Sheets 母表 197 筆、Google Sheets 以外 145 筆。另有 9 筆設定後恢復與 12 筆非 CPU 故障案例已從整合案例表移除，均不納入 CPU 故障統計分母。</p>
+<p>CPU 故障統計共 344 筆：Google Sheets 母表 197 筆、Google Sheets 以外 147 筆。另有 9 筆設定後恢復與 12 筆非 CPU 故障案例已從整合案例表移除，均不納入 CPU 故障統計分母。</p>
 <div class="scroll"><table class="external-stats">
-<thead><tr><th>案例類別</th><th>Google Sheets<br>197 筆</th><th>Google Sheets 以外<br>145 筆</th><th>合計<br>342 筆</th><th>判定說明</th></tr></thead>
+<thead><tr><th>案例類別</th><th>Google Sheets<br>197 筆</th><th>Google Sheets 以外<br>147 筆</th><th>合計<br>344 筆</th><th>判定說明</th></tr></thead>
 <tbody>
-<tr><td>有證據燒掉</td><td>6（3.05%）</td><td>14（9.66%）</td><td>20（5.85%）</td><td>原文直接描述 CPU 有 burn marks／swelling、實體燒毀、可見變色／刮痕，或使用者第一人稱明確表示 CPU was burn／burned；包含「a small looking scratch and looks a little darker」案例。</td></tr>
-<tr><td>確認 CPU 死亡（無燒掉證據）</td><td>95（48.22%）</td><td>96（66.21%）</td><td>191（55.85%）</td><td>第一人稱明確陳述 CPU died／dead，或原文有跨主機板測試、替換 CPU 後正常、店家測試、RMA 更換或明確故障確認，且沒有燒掉敘述或實體燒掉證據。</td></tr>
-<tr><td>POST Code 00（不確定 CPU 是否死亡）</td><td>8（4.06%）</td><td>13（8.97%） <span class="tag newmark">New!／原12</span></td><td>21（6.14%） <span class="tag newmark">New!／原20</span></td><td>原文明確指出主機板 POST／Q-Code／Debug 顯示 00 或 0x00，但尚無足夠證據確認 CPU 死亡。</td></tr>
-<tr><td>不能開機（不確定 CPU 是否死亡）</td><td>88（44.67%）</td><td>22（15.17%） <span class="tag newmark">New!／原19</span></td><td>110（32.16%） <span class="tag newmark">New!／原107</span></td><td>無法 POST、黑屏、CPU／DRAM 燈、其他錯誤碼、疑問或推測語氣，以及僅送 RMA 尚無結果；原文沒有明確指出顯示 00，也沒有證據顯示已通過 CPU／DRAM 階段。</td></tr>
+<tr><td>有證據燒掉</td><td>6（3.05%）</td><td>14（9.52%）</td><td>20（5.81%）</td><td>原文直接描述 CPU 有 burn marks／swelling、實體燒毀、可見變色／刮痕，或使用者第一人稱明確表示 CPU was burn／burned；包含「a small looking scratch and looks a little darker」案例。</td></tr>
+<tr><td>確認 CPU 死亡（無燒掉證據）</td><td>95（48.22%）</td><td>98（66.67%） <span class="tag newmark">New!／原96</span></td><td>193（56.10%） <span class="tag newmark">New!／原191</span></td><td>第一人稱明確陳述 CPU died／dead，或原文有跨主機板測試、替換 CPU 後正常、店家測試、RMA 更換或明確故障確認，且沒有燒掉敘述或實體燒掉證據。</td></tr>
+<tr><td>POST Code 00（不確定 CPU 是否死亡）</td><td>8（4.06%）</td><td>13（8.84%）</td><td>21（6.10%）</td><td>原文明確指出主機板 POST／Q-Code／Debug 顯示 00 或 0x00，但尚無足夠證據確認 CPU 死亡。</td></tr>
+<tr><td>不能開機（不確定 CPU 是否死亡）</td><td>88（44.67%）</td><td>22（14.97%）</td><td>110（31.98%）</td><td>無法 POST、黑屏、CPU／DRAM 燈、其他錯誤碼、疑問或推測語氣，以及僅送 RMA 尚無結果；原文沒有明確指出顯示 00，也沒有證據顯示已通過 CPU／DRAM 階段。</td></tr>
 <tr><td>設定後恢復（已於 2026-08-24 移除）</td><td>1</td><td>8</td><td>9</td><td>原 CPU 經 BIOS／CMOS／記憶體或其他設定修正後恢復，或交叉測試確認原 CPU 可正常開機；移除日期：2026-08-24。</td></tr>
 <tr><td>排除 CPU 故障（已於 2026-08-24 移除）</td><td>9</td><td>3</td><td>12</td><td>原文顯示 CPU／DRAM 階段已通過、停在 VGA／BOOT，CPU 可進 BIOS／Windows／換板後正常，或貼文本身沒有 CPU 故障事件；移除日期：2026-08-24。</td></tr>
-<tr><td>CPU 故障統計合計</td><td>197（100%）</td><td>145（100%） <span class="tag newmark">New!／原141</span></td><td>342（100%） <span class="tag newmark">New!／原338</span></td><td>統計案例彙整數，不是故障率；設定後恢復及排除 CPU 故障案例不在分母內。</td></tr>
+<tr><td>CPU 故障統計合計</td><td>197（100%）</td><td>147（100%） <span class="tag newmark">New!／原145</span></td><td>344（100%） <span class="tag newmark">New!／原342</span></td><td>統計案例彙整數，不是故障率；設定後恢復及排除 CPU 故障案例不在分母內。</td></tr>
 </tbody></table></div>
 <h3>主機板廠牌分布（CPU 故障統計；已排除設定後恢復與非 CPU 故障）</h3>
 <div class="scroll"><table class="external-board-stats">
-<thead><tr><th>主機板廠牌</th><th>Google Sheets<br>197 筆</th><th>Google Sheets 以外<br>145 筆</th><th>合計<br>342 筆</th></tr></thead>
+<thead><tr><th>主機板廠牌</th><th>Google Sheets<br>197 筆</th><th>Google Sheets 以外<br>147 筆</th><th>合計<br>344 筆</th></tr></thead>
 <tbody>
-<tr><td>ASRock</td><td>137（69.54%）</td><td>85（58.62%） <span class="tag newmark">New!／原81</span></td><td>222（64.91%） <span class="tag newmark">New!／原218</span></td></tr>
-<tr><td>ASUS</td><td>42（21.32%）</td><td>30（20.69%）</td><td>72（21.05%）</td></tr>
-<tr><td>MSI</td><td>11（5.58%）</td><td>9（6.21%）</td><td>20（5.85%）</td></tr>
-<tr><td>Gigabyte</td><td>7（3.55%）</td><td>4（2.76%）</td><td>11（3.22%）</td></tr>
-<tr><td>未註明</td><td>0（0%）</td><td>15（10.34%）</td><td>15（4.39%）</td></tr>
-<tr><td>NZXT</td><td>0（0%）</td><td>2（1.38%）</td><td>2（0.58%）</td></tr>
-<tr><td>合計</td><td>197（100%）</td><td>145（100%） <span class="tag newmark">New!／原141</span></td><td>342（100%） <span class="tag newmark">New!／原338</span></td></tr>
+<tr><td>ASRock</td><td>137（69.54%）</td><td>87（59.18%） <span class="tag newmark">New!／原85</span></td><td>224（65.12%） <span class="tag newmark">New!／原222</span></td></tr>
+<tr><td>ASUS</td><td>42（21.32%）</td><td>30（20.41%）</td><td>72（20.93%）</td></tr>
+<tr><td>MSI</td><td>11（5.58%）</td><td>9（6.12%）</td><td>20（5.81%）</td></tr>
+<tr><td>Gigabyte</td><td>7（3.55%）</td><td>4（2.72%）</td><td>11（3.20%）</td></tr>
+<tr><td>未註明</td><td>0（0%）</td><td>15（10.20%）</td><td>15（4.36%）</td></tr>
+<tr><td>NZXT</td><td>0（0%）</td><td>2（1.36%）</td><td>2（0.58%）</td></tr>
+<tr><td>合計</td><td>197（100%）</td><td>147（100%） <span class="tag newmark">New!／原145</span></td><td>344（100%） <span class="tag newmark">New!／原342</span></td></tr>
 </tbody></table></div>
-<p class="small">註：Google Sheets、Google Sheets 以外案例與合計的分母分別為 197、145、342；已排除設定後恢復與非 CPU 故障案例。只有原文明確列出主機板廠牌才計入品牌；表外案例未提供者列為「未註明」，不以 subreddit 或留言推測補填。百分比四捨五入至小數點後兩位。</p>
+<p class="small">註：Google Sheets、Google Sheets 以外案例與合計的分母分別為 197、147、344；已排除設定後恢復與非 CPU 故障案例。只有原文明確列出主機板廠牌才計入品牌；表外案例未提供者列為「未註明」，不以 subreddit 或留言推測補填。百分比四捨五入至小數點後兩位。</p>
 <h3>4. CPU model 分布（CPU 故障統計；已排除設定後恢復與非 CPU 故障）</h3>
 <div class="scroll"><table class="external-cpu-stats">
-<thead><tr><th>CPU model</th><th>Google Sheets<br>197 筆</th><th>Google Sheets 以外<br>145 筆</th><th>合計<br>342 筆</th></tr></thead>
+<thead><tr><th>CPU model</th><th>Google Sheets<br>197 筆</th><th>Google Sheets 以外<br>147 筆</th><th>合計<br>344 筆</th></tr></thead>
 <tbody>
-<tr><td>9800X3D</td><td>132（67.01%）</td><td>71（48.97%） <span class="tag newmark">New!／原68</span></td><td>203（59.36%） <span class="tag newmark">New!／原200</span></td></tr>
-<tr><td>9950X3D</td><td>29（14.72%）</td><td>19（13.10%）</td><td>48（14.04%）</td></tr>
-<tr><td>7800X3D</td><td>28（14.21%）</td><td>10（6.90%）</td><td>38（11.11%）</td></tr>
-<tr><td>9700X</td><td>0（0%）</td><td>17（11.72%）</td><td>17（4.97%）</td></tr>
-<tr><td>9600X</td><td>0（0%）</td><td>9（6.21%）</td><td>9（2.63%）</td></tr>
-<tr><td>7950X3D</td><td>5（2.54%）</td><td>4（2.76%）</td><td>9（2.63%）</td></tr>
+<tr><td>9800X3D</td><td>132（67.01%）</td><td>72（48.98%） <span class="tag newmark">New!／原71</span></td><td>204（59.30%） <span class="tag newmark">New!／原203</span></td></tr>
+<tr><td>9950X3D</td><td>29（14.72%）</td><td>19（12.93%）</td><td>48（13.95%）</td></tr>
+<tr><td>7800X3D</td><td>28（14.21%）</td><td>10（6.80%）</td><td>38（11.05%）</td></tr>
+<tr><td>9700X</td><td>0（0%）</td><td>17（11.56%）</td><td>17（4.94%）</td></tr>
+<tr><td>9600X</td><td>0（0%）</td><td>10（6.80%） <span class="tag newmark">New!／原9</span></td><td>10（2.91%） <span class="tag newmark">New!／原9</span></td></tr>
+<tr><td>7950X3D</td><td>5（2.54%）</td><td>4（2.72%）</td><td>9（2.62%）</td></tr>
 <tr><td>9800X3DS</td><td>2（1.02%）</td><td>0（0%）</td><td>2（0.58%）</td></tr>
-<tr><td>7900X3D</td><td>0（0%）</td><td>1（0.69%）</td><td>1（0.29%）</td></tr>
-<tr><td>9850X3D</td><td>0（0%）</td><td>2（1.38%）</td><td>2（0.58%）</td></tr>
-<tr><td>9900X</td><td>0（0%）</td><td>2（1.38%）</td><td>2（0.58%）</td></tr>
-<tr><td>7600</td><td>0（0%）</td><td>3（2.07%） <span class="tag newmark">New!／原2</span></td><td>3（0.88%） <span class="tag newmark">New!／原2</span></td></tr>
-<tr><td>7600X</td><td>0（0%）</td><td>1（0.69%）</td><td>1（0.29%）</td></tr>
-<tr><td>7700</td><td>0（0%）</td><td>2（1.38%）</td><td>2（0.58%）</td></tr>
+<tr><td>7900X3D</td><td>0（0%）</td><td>1（0.68%）</td><td>1（0.29%）</td></tr>
+<tr><td>9850X3D</td><td>0（0%）</td><td>2（1.36%）</td><td>2（0.58%）</td></tr>
+<tr><td>9900X</td><td>0（0%）</td><td>2（1.36%）</td><td>2（0.58%）</td></tr>
+<tr><td>7600</td><td>0（0%）</td><td>3（2.04%）</td><td>3（0.87%）</td></tr>
+<tr><td>7600X</td><td>0（0%）</td><td>1（0.68%）</td><td>1（0.29%）</td></tr>
+<tr><td>7700</td><td>0（0%）</td><td>2（1.36%）</td><td>2（0.58%）</td></tr>
 <tr><td>9900X3D</td><td>1（0.51%）</td><td>0（0%）</td><td>1（0.29%）</td></tr>
-<tr><td>7600X3D</td><td>0（0%）</td><td>1（0.69%）</td><td>1（0.29%）</td></tr>
-<tr><td>7700X</td><td>0（0%）</td><td>1（0.69%）</td><td>1（0.29%）</td></tr>
-<tr><td>7900X</td><td>0（0%）</td><td>1（0.69%）</td><td>1（0.29%）</td></tr>
-<tr><td>9950X</td><td>0（0%）</td><td>1（0.69%）</td><td>1（0.29%）</td></tr>
-<tr><td>合計</td><td>197（100%）</td><td>145（100%） <span class="tag newmark">New!／原141</span></td><td>342（100%） <span class="tag newmark">New!／原338</span></td></tr>
+<tr><td>7600X3D</td><td>0（0%）</td><td>1（0.68%）</td><td>1（0.29%）</td></tr>
+<tr><td>7700X</td><td>0（0%）</td><td>1（0.68%）</td><td>1（0.29%）</td></tr>
+<tr><td>7900X</td><td>0（0%）</td><td>1（0.68%）</td><td>1（0.29%）</td></tr>
+<tr><td>9950X</td><td>0（0%）</td><td>1（0.68%）</td><td>1（0.29%）</td></tr>
+<tr><td>合計</td><td>197（100%）</td><td>147（100%） <span class="tag newmark">New!／原145</span></td><td>344（100%） <span class="tag newmark">New!／原342</span></td></tr>
 </tbody></table></div>
-<p class="small">註：Google Sheets、Google Sheets 以外案例與合計的分母分別為 197、145、342；已排除設定後恢復與非 CPU 故障案例。Google Sheets 母表的 CPU 型號名稱依試算表原值保留，其中 <code>9800X3DS</code> 為母表原始值；表外案例依 Reddit 原文正規化型號名稱。百分比四捨五入至小數點後兩位。</p>
+<p class="small">註：Google Sheets、Google Sheets 以外案例與合計的分母分別為 197、147、344；已排除設定後恢復與非 CPU 故障案例。Google Sheets 母表的 CPU 型號名稱依試算表原值保留，其中 <code>9800X3DS</code> 為母表原始值；表外案例依 Reddit 原文正規化型號名稱。百分比四捨五入至小數點後兩位。</p>
 </section>
 
 <section class="card">
@@ -204,6 +209,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <div class="scroll"><table class="revision-table">
 <thead><tr><th>日期</th><th>內容變更</th></tr></thead>
 <tbody>
+<tr><td>2026-09-08</td><td><ul><li>搜尋 2026-09-07 17:42 之後新發表的 Reddit 貼文與留言（約 15 小時區間），涵蓋 ASRock、ASUS、AMDHelp、MSI_Gaming、PcBuildHelp、pcbuilding 等主要 subreddit，並以瀏覽器直接搜尋 pcmasterrace、buildapc。</li><li>新增 2 筆表外案例，均為確認 CPU 死亡、均為 ASRock 主機板：IndustryHot9287／X870E Nova（Ryzen 7 9800X3D，換新 CPU 後直接開機，確認原 CPU 故障，無燒痕）；StrawberryNo6878／B650 PG Lightning（Ryzen 5 9600X，經維修店鑑定確認 CPU 故障）。</li><li>回查既有表外「不能開機」與「POST Code 00」案例的後續結果：重點抽查 9/7 新增的 4 筆與 BARRY6969696969 等活躍討論串，本次未發現新的公開後續結果，維持原判定（前一輪已於 2026-09-07 完成全部 35 筆的逐筆核對）。</li><li>整合案例表 342→344 筆（Google Sheets 197、表外 147），同步重算三項統計表；統計表中較上次有變動的數字以 New!／原數值 標示。</li></ul></td></tr>
 <tr><td>2026-09-07</td><td><ul><li>搜尋 2026-09-04 10:41 之後新發表的 Reddit 貼文與留言（約 3 天區間），涵蓋 ASRock、ASUS、AMDHelp、MSI_Gaming、PcBuildHelp、pcbuilding 等主要 subreddit，並以瀏覽器直接搜尋 pcmasterrace、buildapc。</li><li>新增 4 筆表外案例，均為 ASRock 主機板：不能開機 3 筆（RealSamF18／X870E Nova，主機板已因同類症狀更換過一次；mflayer／B850 LiveMixer WiFi，紅色 CPU LED、無燒痕；BrightLanguage010／B650M-HDV，Ryzen 5 7600）；POST Code 00 1 筆（Acid_0／X870E Taichi，間歇性錯誤 94／00，尚可開機使用）。</li><li>回查既有表外「不能開機」與「POST Code 00」案例的後續結果：逐筆核對全部 35 筆案例的討論串，本次未發現新的公開後續結果，維持原判定。</li><li>整合案例表 338→342 筆（Google Sheets 197、表外 145），同步重算三項統計表；統計表中較上次有變動的數字以 New!／原數值 標示。</li></ul></td></tr>
 <tr><td>2026-09-04</td><td><ul><li>搜尋 2026-09-03 16:57 之後新發表的 Reddit 貼文與留言（約 18 小時區間），涵蓋 ASRock、ASUS、AMDHelp、MSI_Gaming、PcBuildHelp 等主要 subreddit，並以瀏覽器直接搜尋 pcmasterrace、buildapc。</li><li>新增 1 筆表外案例：確認 CPU 死亡（Ryzen 7 9800X3D／ASRock B850 LiveMixer，Level_Arachnid_4028），原文提供雙向交叉測試（board+known-good CPU 正常、原 CPU+known-good board 仍紅燈不開機），CPU 外觀無燒痕。</li><li>回查既有表外「不能開機」與「POST Code 00」案例（重點抽查 BARRY6969696969 等近期案例）的後續結果：本次未發現新的公開後續結果，維持原判定。</li><li>整合案例表 337→338 筆（Google Sheets 197、表外 141），同步重算三項統計表；統計表中較上次有變動的數字以 New!／原數值 標示。</li></ul></td></tr>
 <tr><td>2026-09-03</td><td><ul><li>搜尋 2026-09-02 之後新發表的 Reddit 貼文與留言（約 24 小時區間），先以第三方檢索 API（arctic-shift）查詢 ASRock、ASUS、MSI_Gaming、AMDHelp、PcBuildHelp、pcbuilding 等主要 subreddit，其中 pcmasterrace、buildapc 因該 API 查詢不穩定僅能部分涵蓋；改以瀏覽器直接在 reddit.com 站內搜尋（sort=new、restrict_sr、t=week）補查這兩個大版後，額外找到 1 筆先前 API 搜尋遺漏的案例。</li><li>新增 3 筆表外案例：不能開機 2 筆（Ryzen 7 9800X3D／ASRock X870 Steel Legend WiFi，黑屏、CPU／GPU 燈轉紅，尚未申請 RMA；Ryzen 7 7800X3D／ASRock Phantom Gaming X870E Nova WiFi，卡在 Dr. Debug 4d，排查逾一小時無結果）；POST Code 00 1 筆（Ryzen 7 9800X3D／ASRock X870E Nova WiFi，r/pcmasterrace，重開機後卡在 Code 00，重新安裝 CPU 後針腳無燒痕，尚無最終結果，為改用瀏覽器搜尋後補查到的案例）。</li><li>整合案例表 335→338 筆（Google Sheets 197、表外 141），同步重算三項統計表；統計表中較上次有變動的數字以 New!／原數值 標示。</li><li>後續大型 subreddit 的搜尋將優先採用瀏覽器直接搜尋，第三方 API 僅作為輔助查詢核對案例細節（作者、時間、原文）之用。</li><li>回查表外「不能開機」與「POST Code 00」兩類共 36 筆案例的原始討論串，確認是否有後續結果：<ul><li>4 筆確認 CPU 死亡（原為 POST Code 00 或分類有誤）：imp3rd1349（同作者後續留言「I sent cpu to rma and it was replaced」）；djshiye（後續留言確認 CPU 拆開後有 discoloration 痕跡，改列 CPU 燒毀）；AnarchyZ0／1n1ovu8（經銷商送 AMD 服務中心鑑定確認 CPU 無法 POST，已核准更換並收到新 CPU）；Breach13（已購入 replacement CPU 並換板，系統穩定）。</li><li>1 筆確認排除 CPU 故障：PcBuildHelp/1ptpalv（作者後續留言「The CPU is fine, the CPU cooler was the issue」，確認為散熱器安裝問題，已從 CPU 故障統計移除）。</li><li>其餘 31 筆目前仍無公開後續結果（含已重新確認的 1ukjska「00＋疑似燒毀」案例，維持原判定）。</li><li>整合案例表 338→337 筆（Google Sheets 197、表外 140），同步重算三項統計表。</li></ul></li></ul></td></tr>
@@ -370,6 +376,8 @@ document.addEventListener('DOMContentLoaded', function () {
     targetBody.appendChild(row);
   });
   const newCases = [
+    {time:'2026-09-08 05:17:37',author:'IndustryHot9287',cpu:'Ryzen 7 9800X3D',board:'ASRock X870E Nova',sub:'r/ASRock',title:'X870E Nova, 9800X3D Dead CPU',category:'CPU 死亡',evidence:'“Finally gave up and bought a new 9800X3D which posted immediately. No scorch marks, No burnt pins. nothing immediately detectable on the old CPU.”；先前反覆卡在 Code 00，清 CMOS、更新 BIOS、重裝 CPU 均無效，換新 CPU 後直接開機確認為原 CPU 故障。',position:'貼文正文／替換 CPU 對照／高',url:'https://www.reddit.com/r/ASRock/comments/1wa4rks/x870e_nova_9800x3d_dead_cpu/',isNew:'2026-09-08'},
+    {time:'2026-09-08 04:03:34',author:'StrawberryNo6878',cpu:'Ryzen 5 9600X',board:'ASRock B650 PG Lightning',sub:'r/ASRock',title:'dead cpu',category:'CPU 死亡',evidence:'“I took my pc to Pc Service and after day then gave me a call and told me its problem with processor.”；經維修店鑑定確認為 CPU 故障，賣家同意保固換貨／退款。',position:'貼文正文／店家鑑定／高',url:'https://www.reddit.com/r/ASRock/comments/1wa2tqv/dead_cpu/',isNew:'2026-09-08'},
     {time:'2026-09-06 02:41:42',author:'RealSamF18',cpu:'Ryzen 7 9800X3D',board:'ASRock X870E Nova',sub:'r/ASRock',title:'Potential dead 9800X3D on X870e Nova',category:'不能開機',evidence:'主機板已於 2026 年 7 月因同類症狀更換過一次，6 週後再度出現凍結、開機需重試多次，近日惡化為完全無法開機、卡在 error 03；已同時向 AMD 與 ASRock 提出 RMA，尚無最終結果。',position:'貼文正文／中；主機板已換過一次',url:'https://www.reddit.com/r/ASRock/comments/1w88toh/potential_dead_9800x3d_on_x870e_nova/',isNew:'2026-09-07'},
     {time:'2026-09-05 23:18:21',author:'mflayer',cpu:'Ryzen 7 9800X3D',board:'ASRock B850 LiveMixer WiFi',sub:'r/ASRock',title:'Yet another dead 9800x3d after 16 months on a B850 LiveMixer WiFi',category:'不能開機',evidence:'“it didn\'t POST anymore and the evil red LED of death was glowing”；BIOS Flashback 至 4.43 未解決；“There are no burn marks, no bent pins etc.”；RMA 已送出，尚無結果。',position:'貼文正文／中高',url:'https://www.reddit.com/r/ASRock/comments/1w83hmg/yet_another_dead_9800x3d_after_16_months_on_a/',isNew:'2026-09-07'},
     {time:'2026-09-05 02:28:26',author:'BrightLanguage010',cpu:'Ryzen 5 7600',board:'ASRock B650M-HDV/M.2',sub:'r/ASRock',title:'Just the CPU?',category:'不能開機',evidence:'“I\'m getting CPU and dram red lights. Only sign of life is fans spinning.”；換回原本 M.2 與各種排查後仍無反應；作者稱“pretty sure it\'s fried”，準備送 AMD RMA，貼文未提供最終結果。',position:'貼文正文／留言追蹤／中',url:'https://www.reddit.com/r/ASRock/comments/1w7ckw2/just_the_cpu/',isNew:'2026-09-07'},
@@ -494,7 +502,7 @@ document.addEventListener('DOMContentLoaded', function () {
     row.innerHTML = '<td>' + item.time + '</td><td><a href="https://www.reddit.com/user/' + encodeURIComponent(item.author) + '/" target="_blank" rel="noopener">u/' + escapeHtml(item.author) + '</a></td>'
       + '<td>' + escapeHtml(item.cpu) + '</td><td>' + escapeHtml(item.board) + '</td><td>' + escapeHtml(item.sub) + '</td>'
       + '<td><a href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener">' + escapeHtml(item.title) + '</a></td>'
-      + '<td>' + (isRecoveredAfterSettings(url) ? recoveredCategory : item.category) + '</td><td>' + item.evidence + '</td><td>' + (item.isNew === '2026-09-07' ? '<span class="tag red">New!</span> ' : '') + item.position + '</td>';
+      + '<td>' + (isRecoveredAfterSettings(url) ? recoveredCategory : item.category) + '</td><td>' + item.evidence + '</td><td>' + (item.isNew === '2026-09-08' ? '<span class="tag red">New!</span> ' : '') + item.position + '</td>';
     targetBody.appendChild(row);
   });
   const excludedPostIds = new Set([
@@ -612,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (boardFilter) boardFilter.addEventListener('change', applyCaseFiltersReset);
   if (monthFilter) monthFilter.addEventListener('change', applyCaseFiltersReset);
   if (statusFilter) statusFilter.addEventListener('change', applyCaseFiltersReset);
-  if (loadMoreBtn) loadMoreBtn.addEventListener('click', function () { caseDisplayLimit = Infinity; applyCaseFilters(); });
+  if (loadMoreBtn) loadMoreBtn.addEventListener('click', function () { caseDisplayLimit += caseDisplayStep; applyCaseFilters(); });
   applyCaseFilters();
   const monthlyChartEl = document.getElementById('monthly-chart');
   if (monthlyChartEl) {

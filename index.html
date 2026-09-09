@@ -36,8 +36,8 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <main>
 <header>
 <div class="brand-row"><img class="report-icon" src="assets/burnt-coconut-icon.png" width="58" height="58" alt="剖開並燒焦冒煙的椰子圖示"><h1>Reddit - Ryzen 7000／9000 系列CPU 燒毀與CPU壞掉/POST Code 00 不開機案例</h1></div>
-<p class="meta">版本：<a href="#revision-history">v1.7</a>　｜　上次更新日期：2026-09-09 14:18</p>
-<p class="meta">本次整理日期：2026-09-09 14:24（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-09-09　｜　平台：Reddit 公開貼文與留言</p>
+<p class="meta">版本：<a href="#revision-history">v1.8</a>　｜　上次更新日期：2026-09-09 14:24</p>
+<p class="meta">本次整理日期：2026-09-09 15:01（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-09-09　｜　平台：Reddit 公開貼文與留言</p>
 <p>本報告整理 AMD Ryzen 7000／9000 桌上型 CPU 的公開 Reddit 貼文與留言，時間範圍自 2024-01-01 起。整合案例表依原文證據分為燒毀、確認 CPU 死亡、POST Code 00 與不能開機。設定後恢復、已通過 CPU／DRAM 階段、CPU 可進 BIOS／Windows／換板後正常，或沒有實際 CPU 故障事件者，均不納入整合案例表及 CPU 故障統計。案例數僅為公開回報彙整，不代表產品故障率或因果關係。</p>
 </header>
 
@@ -53,6 +53,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <li>回查既有表外「不能開機」與「POST Code 00」案例後續結果：重點抽查 9/8 新增的 2 筆與 BARRY6969696969 等活躍討論串，本次未發現新的公開後續結果，維持原判定。</li>
 <li>整合案例表更新為 346 筆（Google Sheets 197、表外 149），同步重算案例類別、主機板廠牌及 CPU 型號分布；本次新增列標示 New!，統計表中有變動的數字另以 New!／原數值 標示。</li>
 <li>新增「主機板廠牌分布－有證據燒掉＋確認 CPU 死亡」獨立統計表（v1.7），只計入已確認故障（有證據燒掉＋確認 CPU 死亡，共 213 筆）的主機板廠牌分布，排除 POST Code 00 與不能開機兩類尚未確認死亡的案例，與原本涵蓋全部四類的「主機板廠牌分布」表並列對照。</li>
+<li>「CPU model 分布」表新增「有證據燒掉＋確認死亡」欄位（v1.8），同樣只計入已確認故障兩類案例（合計 213 筆）在各 CPU 型號的分布，與原本涵蓋全部四類的欄位並列對照。</li>
 </ul>
 </section>
 
@@ -156,29 +157,29 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <p class="small">註：本表只計入「有證據燒掉」與「確認 CPU 死亡」兩類案例，分母改為 101（Google Sheets）、112（Google Sheets 以外）、213（合計），排除 POST Code 00 與不能開機兩類尚未確認死亡的案例，用於觀察已明確故障案例的主機板廠牌分布，避免未確認案例稀釋比例。品牌判定與「未註明」規則同上表。百分比四捨五入至小數點後兩位。</p>
 <h3>4. CPU model 分布（CPU 故障統計；已排除設定後恢復與非 CPU 故障）</h3>
 <div class="scroll"><table class="external-cpu-stats">
-<thead><tr><th>CPU model</th><th>Google Sheets<br>197 筆</th><th>Google Sheets 以外<br>149 筆</th><th>合計<br>346 筆</th></tr></thead>
+<thead><tr><th>CPU model</th><th>Google Sheets<br>197 筆</th><th>Google Sheets 以外<br>149 筆</th><th>合計<br>346 筆</th><th>有證據燒掉＋確認死亡<br>合計 213 筆</th></tr></thead>
 <tbody>
-<tr><td>9800X3D</td><td>132（67.01%）</td><td>72（48.32%）</td><td>204（58.96%）</td></tr>
-<tr><td>9950X3D</td><td>29（14.72%）</td><td>20（13.42%） <span class="tag newmark">New!／原19</span></td><td>49（14.16%） <span class="tag newmark">New!／原48</span></td></tr>
-<tr><td>7800X3D</td><td>28（14.21%）</td><td>10（6.71%）</td><td>38（10.98%）</td></tr>
-<tr><td>9700X</td><td>0（0%）</td><td>18（12.08%） <span class="tag newmark">New!／原17</span></td><td>18（5.20%） <span class="tag newmark">New!／原17</span></td></tr>
-<tr><td>9600X</td><td>0（0%）</td><td>10（6.71%）</td><td>10（2.89%）</td></tr>
-<tr><td>7950X3D</td><td>5（2.54%）</td><td>4（2.68%）</td><td>9（2.60%）</td></tr>
-<tr><td>9800X3DS</td><td>2（1.02%）</td><td>0（0%）</td><td>2（0.58%）</td></tr>
-<tr><td>7900X3D</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td></tr>
-<tr><td>9850X3D</td><td>0（0%）</td><td>2（1.34%）</td><td>2（0.58%）</td></tr>
-<tr><td>9900X</td><td>0（0%）</td><td>2（1.34%）</td><td>2（0.58%）</td></tr>
-<tr><td>7600</td><td>0（0%）</td><td>3（2.01%）</td><td>3（0.87%）</td></tr>
-<tr><td>7600X</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td></tr>
-<tr><td>7700</td><td>0（0%）</td><td>2（1.34%）</td><td>2（0.58%）</td></tr>
-<tr><td>9900X3D</td><td>1（0.51%）</td><td>0（0%）</td><td>1（0.29%）</td></tr>
-<tr><td>7600X3D</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td></tr>
-<tr><td>7700X</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td></tr>
-<tr><td>7900X</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td></tr>
-<tr><td>9950X</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td></tr>
-<tr><td>合計</td><td>197（100%）</td><td>149（100%） <span class="tag newmark">New!／原147</span></td><td>346（100%） <span class="tag newmark">New!／原344</span></td></tr>
+<tr><td>9800X3D</td><td>132（67.01%）</td><td>72（48.32%）</td><td>204（58.96%）</td><td>118（55.40%）</td></tr>
+<tr><td>9950X3D</td><td>29（14.72%）</td><td>20（13.42%） <span class="tag newmark">New!／原19</span></td><td>49（14.16%） <span class="tag newmark">New!／原48</span></td><td>34（15.96%）</td></tr>
+<tr><td>7800X3D</td><td>28（14.21%）</td><td>10（6.71%）</td><td>38（10.98%）</td><td>16（7.51%）</td></tr>
+<tr><td>9700X</td><td>0（0%）</td><td>18（12.08%） <span class="tag newmark">New!／原17</span></td><td>18（5.20%） <span class="tag newmark">New!／原17</span></td><td>17（7.98%）</td></tr>
+<tr><td>9600X</td><td>0（0%）</td><td>10（6.71%）</td><td>10（2.89%）</td><td>8（3.76%）</td></tr>
+<tr><td>7950X3D</td><td>5（2.54%）</td><td>4（2.68%）</td><td>9（2.60%）</td><td>7（3.29%）</td></tr>
+<tr><td>9800X3DS</td><td>2（1.02%）</td><td>0（0%）</td><td>2（0.58%）</td><td>2（0.94%）</td></tr>
+<tr><td>7900X3D</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td><td>1（0.47%）</td></tr>
+<tr><td>9850X3D</td><td>0（0%）</td><td>2（1.34%）</td><td>2（0.58%）</td><td>1（0.47%）</td></tr>
+<tr><td>9900X</td><td>0（0%）</td><td>2（1.34%）</td><td>2（0.58%）</td><td>1（0.47%）</td></tr>
+<tr><td>7600</td><td>0（0%）</td><td>3（2.01%）</td><td>3（0.87%）</td><td>1（0.47%）</td></tr>
+<tr><td>7600X</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td><td>1（0.47%）</td></tr>
+<tr><td>7700</td><td>0（0%）</td><td>2（1.34%）</td><td>2（0.58%）</td><td>1（0.47%）</td></tr>
+<tr><td>9900X3D</td><td>1（0.51%）</td><td>0（0%）</td><td>1（0.29%）</td><td>1（0.47%）</td></tr>
+<tr><td>7600X3D</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td><td>1（0.47%）</td></tr>
+<tr><td>7700X</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td><td>1（0.47%）</td></tr>
+<tr><td>7900X</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td><td>1（0.47%）</td></tr>
+<tr><td>9950X</td><td>0（0%）</td><td>1（0.67%）</td><td>1（0.29%）</td><td>1（0.47%）</td></tr>
+<tr><td>合計</td><td>197（100%）</td><td>149（100%） <span class="tag newmark">New!／原147</span></td><td>346（100%） <span class="tag newmark">New!／原344</span></td><td>213（100%）</td></tr>
 </tbody></table></div>
-<p class="small">註：Google Sheets、Google Sheets 以外案例與合計的分母分別為 197、149、346；已排除設定後恢復與非 CPU 故障案例。Google Sheets 母表的 CPU 型號名稱依試算表原值保留，其中 <code>9800X3DS</code> 為母表原始值；表外案例依 Reddit 原文正規化型號名稱。百分比四捨五入至小數點後兩位。</p>
+<p class="small">註：Google Sheets、Google Sheets 以外案例與合計的分母分別為 197、149、346；已排除設定後恢復與非 CPU 故障案例。Google Sheets 母表的 CPU 型號名稱依試算表原值保留，其中 <code>9800X3DS</code> 為母表原始值；表外案例依 Reddit 原文正規化型號名稱。「有證據燒掉＋確認死亡」欄只計入該兩類已確認故障案例（Google Sheets 與表外合計 213 筆），排除 POST Code 00 與不能開機兩類尚未確認死亡的案例，用於觀察已確認故障案例的 CPU 型號分布。百分比四捨五入至小數點後兩位。</p>
 </section>
 
 <section class="card">
@@ -210,6 +211,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <div class="scroll"><table class="version-table">
 <thead><tr><th>版本</th><th>日期</th><th>類型</th><th>架構／版面變更</th></tr></thead>
 <tbody>
+<tr><td>v1.8</td><td>2026-09-09</td><td>小改版</td><td>「CPU model 分布」表新增「有證據燒掉＋確認死亡」欄位，只計入已確認故障兩類案例（合計 213 筆）在各 CPU 型號的分布，與原本涵蓋全部四類的欄位並列對照。</td></tr>
 <tr><td>v1.7</td><td>2026-09-09</td><td>小改版</td><td>統計摘要新增「主機板廠牌分布－有證據燒掉＋確認 CPU 死亡」獨立表格，只計入已確認故障（有證據燒掉＋確認 CPU 死亡）兩類案例的主機板廠牌分布，與原本涵蓋全部四類（含 POST Code 00、不能開機）的「主機板廠牌分布」表並列，避免未確認案例稀釋已確認故障的廠牌比例；並在兩表標題與註解中明確標示各自的統計範圍（四類合計／僅已確認故障兩類）。</td></tr>
 <tr><td>v1.6</td><td>2026-09-07</td><td>小改版</td><td>統計摘要新增「CPU 燒毀＋確認死亡 月度分布」堆疊柱狀圖（燒毀／死亡兩色分層、柱頂標示月度加總），並列為統計摘要第 2 小節，原第 2、3 小節依序調整為第 3、4 小節；整合案例表改為預設只顯示前 20 筆符合篩選條件的案例，並新增「顯示更多」按鈕展開其餘案例，切換篩選條件時自動重置為前 20 筆。</td></tr>
 <tr><td>v1.5</td><td>2026-09-03</td><td>小改版</td><td>整合案例表新增「狀態更新」篩選（與案例類別、主機板品牌、月份篩選並列），可單獨篩選出因後續結果而重新分類的案例；符合條件的列同步在案例類別欄位標示「狀態更新」標籤（滑鼠移入顯示原因）。</td></tr>

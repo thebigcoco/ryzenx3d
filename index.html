@@ -36,8 +36,8 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <main>
 <header>
 <div class="brand-row"><img class="report-icon" src="assets/burnt-coconut-icon.png" width="58" height="58" alt="剖開並燒焦冒煙的椰子圖示"><h1>Reddit - Ryzen 7000／9000 系列CPU 燒毀與CPU壞掉/POST Code 00 不開機案例</h1></div>
-<p class="meta">版本：<a href="#revision-history">v1.10</a>　｜　上次更新日期：2026-09-09 15:41</p>
-<p class="meta">本次整理日期：2026-09-09 16:01（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-09-09　｜　平台：Reddit 公開貼文與留言</p>
+<p class="meta">版本：<a href="#revision-history">v1.11</a>　｜　上次更新日期：2026-09-09 16:01</p>
+<p class="meta">本次整理日期：2026-09-09 16:18（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-09-09　｜　平台：Reddit 公開貼文與留言</p>
 <p>本報告整理 AMD Ryzen 7000／9000 桌上型 CPU 的公開 Reddit 貼文與留言，時間範圍自 2024-01-01 起。整合案例表依原文證據分為燒毀、確認 CPU 死亡、POST Code 00 與不能開機。設定後恢復、已通過 CPU／DRAM 階段、CPU 可進 BIOS／Windows／換板後正常，或沒有實際 CPU 故障事件者，均不納入整合案例表及 CPU 故障統計。案例數僅為公開回報彙整，不代表產品故障率或因果關係。</p>
 </header>
 
@@ -53,6 +53,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <li>整合案例表更新為 345 筆（Google Sheets 197、表外 148），同步重算案例類別、主機板廠牌及 CPU 型號分布；本次新增列標示 New!，統計表中有變動的數字另以 New!／原數值 標示。</li>
 <li>新增「主機板廠牌分布－有證據燒掉＋確認 CPU 死亡」獨立統計表（v1.7），只計入已確認故障（有證據燒掉＋確認 CPU 死亡，共 217 筆）的主機板廠牌分布，排除 POST Code 00 與不能開機兩類尚未確認死亡的案例，與原本涵蓋全部四類的「主機板廠牌分布」表並列對照。</li>
 <li>「CPU model 分布」表新增「有證據燒掉＋確認死亡」欄位（v1.8），同樣只計入已確認故障兩類案例（合計 217 筆）在各 CPU 型號的分布，與原本涵蓋全部四類的欄位並列對照。</li>
+<li>「主機板廠牌分布－有證據燒掉＋確認 CPU 死亡」表新增「有證據燒掉」（合計 20 筆）與「確認 CPU 死亡」（合計 197 筆）兩欄（v1.11），將原本合併計算的已確認故障數字進一步拆分為兩種故障型態，供比較各廠牌分布差異；例如 ASRock 在燒毀案例中佔 45.00%，在死亡案例中佔 64.97%。</li>
 <li>逐筆回查 2026 年 8 月表外「不能開機」與「POST Code 00」全部 17 筆案例的原始討論串：Dry-Permission8332（r/pcmasterrace，Ryzen 9 9950X3D／Gigabyte X870E AORUS Pro ICE，原列不能開機）後續更新以 replacement CPU（Ryzen 5 7600X）測試後正常開機，確認原 CPU 故障、作者計畫 RMA，已改列「確認 CPU 死亡」；其中 4 筆貼文已被移除（需登入才能檢視，內容無法查證）、2 筆已由原作者自行刪除且無留言記錄最終結果，其餘 10 筆本次未發現新的公開後續結果，維持原判定。</li>
 <li>逐筆回查 2026 年 9 月表外「不能開機」與「POST Code 00」全部 9 筆案例的原始討論串，發現 2 筆有後續結果：
 <ol>
@@ -156,17 +157,17 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <p class="small">註：本表統計範圍為 CPU 故障統計四類全部合計（有證據燒掉＋確認 CPU 死亡＋POST Code 00＋不能開機），Google Sheets、Google Sheets 以外案例與合計的分母分別為 197、148、345；已排除設定後恢復與非 CPU 故障案例。只有原文明確列出主機板廠牌才計入品牌；表外案例未提供者列為「未註明」，不以 subreddit 或留言推測補填。百分比四捨五入至小數點後兩位。</p>
 <h3>主機板廠牌分布－有證據燒掉＋確認 CPU 死亡（不含 POST Code 00／不能開機，已排除設定後恢復與非 CPU 故障）</h3>
 <div class="scroll"><table class="external-board-stats">
-<thead><tr><th>主機板廠牌</th><th>Google Sheets<br>102 筆</th><th>Google Sheets 以外<br>115 筆</th><th>合計<br>217 筆</th></tr></thead>
+<thead><tr><th>主機板廠牌</th><th>Google Sheets<br>102 筆</th><th>Google Sheets 以外<br>115 筆</th><th>合計<br>217 筆</th><th>有證據燒掉<br>合計 20 筆</th><th>確認 CPU 死亡<br>合計 197 筆</th></tr></thead>
 <tbody>
-<tr><td>ASRock</td><td>68（66.67%） <span class="tag newmark">New!／原67</span></td><td>69（60.00%）</td><td>137（63.13%） <span class="tag newmark">New!／原136</span></td></tr>
-<tr><td>ASUS</td><td>21（20.59%）</td><td>24（20.87%） <span class="tag newmark">New!／原22</span></td><td>45（20.74%） <span class="tag newmark">New!／原43</span></td></tr>
-<tr><td>MSI</td><td>6（5.88%）</td><td>6（5.22%）</td><td>12（5.53%）</td></tr>
-<tr><td>Gigabyte</td><td>7（6.86%）</td><td>2（1.74%）</td><td>9（4.15%）</td></tr>
-<tr><td>未註明</td><td>0（0%）</td><td>12（10.43%）</td><td>12（5.53%）</td></tr>
-<tr><td>NZXT</td><td>0（0%）</td><td>2（1.74%）</td><td>2（0.92%）</td></tr>
-<tr><td>合計</td><td>102（100%） <span class="tag newmark">New!／原101</span></td><td>115（100%） <span class="tag newmark">New!／原112</span></td><td>217（100%） <span class="tag newmark">New!／原213</span></td></tr>
+<tr><td>ASRock</td><td>68（66.67%） <span class="tag newmark">New!／原67</span></td><td>69（60.00%）</td><td>137（63.13%） <span class="tag newmark">New!／原136</span></td><td>9（45.00%）</td><td>128（64.97%）</td></tr>
+<tr><td>ASUS</td><td>21（20.59%）</td><td>24（20.87%） <span class="tag newmark">New!／原22</span></td><td>45（20.74%） <span class="tag newmark">New!／原43</span></td><td>7（35.00%）</td><td>38（19.29%）</td></tr>
+<tr><td>MSI</td><td>6（5.88%）</td><td>6（5.22%）</td><td>12（5.53%）</td><td>3（15.00%）</td><td>9（4.57%）</td></tr>
+<tr><td>Gigabyte</td><td>7（6.86%）</td><td>2（1.74%）</td><td>9（4.15%）</td><td>1（5.00%）</td><td>8（4.06%）</td></tr>
+<tr><td>未註明</td><td>0（0%）</td><td>12（10.43%）</td><td>12（5.53%）</td><td>0（0%）</td><td>12（6.09%）</td></tr>
+<tr><td>NZXT</td><td>0（0%）</td><td>2（1.74%）</td><td>2（0.92%）</td><td>0（0%）</td><td>2（1.02%）</td></tr>
+<tr><td>合計</td><td>102（100%） <span class="tag newmark">New!／原101</span></td><td>115（100%） <span class="tag newmark">New!／原112</span></td><td>217（100%） <span class="tag newmark">New!／原213</span></td><td>20（100%）</td><td>197（100%）</td></tr>
 </tbody></table></div>
-<p class="small">註：本表只計入「有證據燒掉」與「確認 CPU 死亡」兩類案例，分母改為 102（Google Sheets）、115（Google Sheets 以外）、217（合計），排除 POST Code 00 與不能開機兩類尚未確認死亡的案例，用於觀察已明確故障案例的主機板廠牌分布，避免未確認案例稀釋比例。品牌判定與「未註明」規則同上表。百分比四捨五入至小數點後兩位。</p>
+<p class="small">註：本表只計入「有證據燒掉」與「確認 CPU 死亡」兩類案例，分母改為 102（Google Sheets）、115（Google Sheets 以外）、217（合計），排除 POST Code 00 與不能開機兩類尚未確認死亡的案例，用於觀察已明確故障案例的主機板廠牌分布，避免未確認案例稀釋比例。「有證據燒掉」與「確認 CPU 死亡」兩欄進一步拆分前述合計，分母各自為 20 筆、197 筆（Google Sheets 與表外合計），供比較兩種故障型態在各廠牌間的分布差異。品牌判定與「未註明」規則同上表。百分比四捨五入至小數點後兩位。</p>
 <h3>4. CPU model 分布（CPU 故障統計；已排除設定後恢復與非 CPU 故障）</h3>
 <div class="scroll"><table class="external-cpu-stats">
 <thead><tr><th>CPU model</th><th>Google Sheets<br>197 筆</th><th>Google Sheets 以外<br>148 筆</th><th>合計<br>345 筆</th><th>有證據燒掉＋確認死亡<br>合計 217 筆</th></tr></thead>
@@ -224,6 +225,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <div class="scroll"><table class="version-table">
 <thead><tr><th>版本</th><th>日期</th><th>類型</th><th>架構／版面變更</th></tr></thead>
 <tbody>
+<tr><td>v1.11</td><td>2026-09-09</td><td>小改版</td><td>「主機板廠牌分布－有證據燒掉＋確認 CPU 死亡」表新增「有證據燒掉」與「確認 CPU 死亡」兩欄，將原本合併計算的已確認故障數字進一步拆分為兩種故障型態，供比較各廠牌在燒毀與死亡案例中的分布差異。</td></tr>
 <tr><td>v1.10</td><td>2026-09-09</td><td>小改版</td><td>整合案例表「狀態更新」標籤改為明確標示變動前後的分類（例如「原「POST Code 00」→「CPU 死亡」」），取代原本僅顯示「狀態更新」四字的籠統標籤，讓讀者不必查閱證據欄位就能看出案例的分類是怎麼變動的。</td></tr>
 <tr><td>v1.9</td><td>2026-09-09</td><td>小改版</td><td>Revision History 改為預設收合，只顯示標題，點擊後才展開「版本紀錄」與「內容更新紀錄」兩張表；標題下方版本號連結至此區時會自動展開。</td></tr>
 <tr><td>v1.8</td><td>2026-09-09</td><td>小改版</td><td>「CPU model 分布」表新增「有證據燒掉＋確認死亡」欄位，只計入已確認故障兩類案例（合計 213 筆）在各 CPU 型號的分布，與原本涵蓋全部四類的欄位並列對照。</td></tr>

@@ -113,7 +113,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <tr><td></td><td></td><td></td><td>7900X3D</td><td>2</td><td>0.97%</td></tr>
 <tr><td></td><td></td><td></td><td>9900X3D</td><td>1</td><td>0.48%</td></tr>
 </tbody></table></div>
-<h3>2. CPU 燒毀＋確認死亡 月度分布</h3>
+<h3>2. CPU 燒毀＋確認死亡 月份分布</h3>
 <p class="small">依整合案例表（含 Google Sheets 母表與表外案例）中「有證據燒掉」與「確認 CPU 死亡」兩類案例的發文／留言月份統計；柱狀圖為兩類堆疊顯示，柱頂數字為當月加總。月份依 Reddit <code>created_utc</code> 換算台灣時間認定；資料仍為公開回報彙整，不代表故障率隨月份的變化趨勢。</p>
 <div class="scroll"><div id="monthly-chart"></div></div>
 <h3>3. CPU 故障案例類別統計（已排除設定後恢復與非 CPU 故障）</h3>
@@ -213,7 +213,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <tbody>
 <tr><td>v1.8</td><td>2026-09-09</td><td>小改版</td><td>「CPU model 分布」表新增「有證據燒掉＋確認死亡」欄位，只計入已確認故障兩類案例（合計 213 筆）在各 CPU 型號的分布，與原本涵蓋全部四類的欄位並列對照。</td></tr>
 <tr><td>v1.7</td><td>2026-09-09</td><td>小改版</td><td>統計摘要新增「主機板廠牌分布－有證據燒掉＋確認 CPU 死亡」獨立表格，只計入已確認故障（有證據燒掉＋確認 CPU 死亡）兩類案例的主機板廠牌分布，與原本涵蓋全部四類（含 POST Code 00、不能開機）的「主機板廠牌分布」表並列，避免未確認案例稀釋已確認故障的廠牌比例；並在兩表標題與註解中明確標示各自的統計範圍（四類合計／僅已確認故障兩類）。</td></tr>
-<tr><td>v1.6</td><td>2026-09-07</td><td>小改版</td><td>統計摘要新增「CPU 燒毀＋確認死亡 月度分布」堆疊柱狀圖（燒毀／死亡兩色分層、柱頂標示月度加總），並列為統計摘要第 2 小節，原第 2、3 小節依序調整為第 3、4 小節；整合案例表改為預設只顯示前 20 筆符合篩選條件的案例，並新增「顯示更多」按鈕展開其餘案例，切換篩選條件時自動重置為前 20 筆。</td></tr>
+<tr><td>v1.6</td><td>2026-09-07</td><td>小改版</td><td>統計摘要新增「CPU 燒毀＋確認死亡 月份分布」堆疊柱狀圖（燒毀／死亡兩色分層、柱頂標示月份加總），並列為統計摘要第 2 小節，原第 2、3 小節依序調整為第 3、4 小節；整合案例表改為預設只顯示前 20 筆符合篩選條件的案例，並新增「顯示更多」按鈕展開其餘案例，切換篩選條件時自動重置為前 20 筆。</td></tr>
 <tr><td>v1.5</td><td>2026-09-03</td><td>小改版</td><td>整合案例表新增「狀態更新」篩選（與案例類別、主機板品牌、月份篩選並列），可單獨篩選出因後續結果而重新分類的案例；符合條件的列同步在案例類別欄位標示「狀態更新」標籤（滑鼠移入顯示原因）。</td></tr>
 <tr><td>v1.4</td><td>2026-09-03</td><td>小改版</td><td>整合案例表新增「月份」篩選（與案例類別、主機板品牌篩選並列）；統計表加入「New!／原數值」標記機制，僅標示相較上一版本有變動的數字；Revision History 拆分為「版本紀錄」與「內容更新紀錄」兩張表。</td></tr>
 <tr><td>v1.3</td><td>2026-08-27</td><td>小改版</td><td>改以完整 Ryzen 7000／9000 型號清單與擴充後的故障關鍵字規則重新搜尋，擴大搜尋範圍與去重規則。</td></tr>
@@ -670,7 +670,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const rawMax = Math.max(1, Math.max.apply(null, months.map(function (m) { return (burnCounts[m] || 0) + (deadCounts[m] || 0); })));
     const yMax = Math.ceil(rawMax / 5) * 5 || 5;
     const scale = chartH / yMax;
-    let svg = '<svg width="' + (chartW + padL + 10) + '" height="' + (chartH + padT + padB) + '" viewBox="0 0 ' + (chartW + padL + 10) + ' ' + (chartH + padT + padB) + '" role="img" aria-label="CPU 燒毀與確認死亡月度堆疊柱狀圖">';
+    let svg = '<svg width="' + (chartW + padL + 10) + '" height="' + (chartH + padT + padB) + '" viewBox="0 0 ' + (chartW + padL + 10) + ' ' + (chartH + padT + padB) + '" role="img" aria-label="CPU 燒毀與確認死亡月份堆疊柱狀圖">';
     for (let i = 0; i <= 5; i++) {
       const val = Math.round(yMax * i / 5);
       const y = padT + chartH - (val * scale);

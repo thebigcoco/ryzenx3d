@@ -36,8 +36,8 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <main>
 <header>
 <div class="brand-row"><img class="report-icon" src="assets/burnt-coconut-icon.png" width="58" height="58" alt="剖開並燒焦冒煙的椰子圖示"><h1>Reddit - Ryzen 7000／9000 系列CPU 燒毀與CPU壞掉/POST Code 00 不開機案例</h1></div>
-<p class="meta">版本：<a href="#revision-history">v1.11</a>　｜　上次更新日期：2026-09-10 15:27</p>
-<p class="meta">本次整理日期：2026-09-11 09:43（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-09-11　｜　平台：Reddit 公開貼文與留言</p>
+<p class="meta">版本：<a href="#revision-history">v1.12</a>　｜　上次更新日期：2026-09-11 09:43</p>
+<p class="meta">本次整理日期：2026-09-11 10:15（台灣時間，UTC+8）　｜　時間範圍：2024-01-01～2026-09-11　｜　平台：Reddit 公開貼文與留言</p>
 <p>本報告整理 AMD Ryzen 7000／9000 桌上型 CPU 的公開 Reddit 貼文與留言，時間範圍自 2024-01-01 起。整合案例表依原文證據分為燒毀、確認 CPU 死亡、POST Code 00 與不能開機。設定後恢復、已通過 CPU／DRAM 階段、CPU 可進 BIOS／Windows／換板後正常，或沒有實際 CPU 故障事件者，均不納入整合案例表及 CPU 故障統計。案例數僅為公開回報彙整，不代表產品故障率或因果關係。</p>
 </header>
 
@@ -52,6 +52,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 </li>
 <li>回查既有表外「不能開機」與「POST Code 00」案例後續結果：重點追蹤最近新增的 Relevant_Number_325（9/8，不能開機）與 SpecialistConcept423（9/8，POST Code 00，RMA 受理中），本次未發現新的公開後續結果，維持原判定。</li>
 <li>整合案例表更新為 353 筆（Google Sheets 197、表外 156），同步重算案例類別、主機板廠牌及 CPU 型號分布；本次新增列標示 New!，統計表中有變動的數字另以 New!／原數值 標示。</li>
+<li>整合案例表「狀態更新」標籤加上判定日期（例如「狀態更新（2026-09-09）：原「POST Code 00」→「CPU 死亡」」），涵蓋全部 8 筆已標示狀態更新的案例；同步更新月份分布圖表與案例類別篩選器的分類比對規則，確保新格式仍能正確辨識。</li>
 </ul>
 </section>
 
@@ -210,6 +211,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <div class="scroll"><table class="version-table">
 <thead><tr><th>版本</th><th>日期</th><th>類型</th><th>架構／版面變更</th></tr></thead>
 <tbody>
+<tr><td>v1.12</td><td>2026-09-11</td><td>小改版</td><td>整合案例表「狀態更新」標籤加上判定日期（例如「狀態更新（2026-09-09）：原「POST Code 00」→「CPU 死亡」」），讓讀者不必查閱內容更新紀錄就能知道分類是何時變動的；同步更新月份分布圖表與案例類別篩選器的比對規則，以正確辨識新格式。</td></tr>
 <tr><td>v1.11</td><td>2026-09-09</td><td>小改版</td><td>「主機板廠牌分布－有證據燒掉＋確認 CPU 死亡」表新增「有證據燒掉」與「確認 CPU 死亡」兩欄，將原本合併計算的已確認故障數字進一步拆分為兩種故障型態，供比較各廠牌在燒毀與死亡案例中的分布差異。</td></tr>
 <tr><td>v1.10</td><td>2026-09-09</td><td>小改版</td><td>整合案例表「狀態更新」標籤改為明確標示變動前後的分類（例如「原「POST Code 00」→「CPU 死亡」」），取代原本僅顯示「狀態更新」四字的籠統標籤，讓讀者不必查閱證據欄位就能看出案例的分類是怎麼變動的。</td></tr>
 <tr><td>v1.9</td><td>2026-09-09</td><td>小改版</td><td>Revision History 改為預設收合，只顯示標題，點擊後才展開「版本紀錄」與「內容更新紀錄」兩張表；標題下方版本號連結至此區時會自動展開。</td></tr>
@@ -228,7 +230,7 @@ main{max-width:1500px;margin:28px auto;padding:0 22px} header,.card{background:#
 <div class="scroll"><table class="revision-table">
 <thead><tr><th>日期</th><th>內容變更</th></tr></thead>
 <tbody>
-<tr><td>2026-09-11</td><td><ul><li>以完整 27 個 subreddit 清單、分頁查詢搜尋 2026-09-10 15:11 之後新發表的 Reddit 貼文，涵蓋至查詢當下。</li><li>新增 2 筆表外案例：確認 CPU 死亡 1 筆（samiamyammy／9700X、ASRock，換裝 9600X 測試後正常開機，交叉測試確認原 CPU 故障）；不能開機 1 筆（yeyo937／7700X、ASRock B850i Lightning WiFi，主機板已因同類症狀 RMA 更換過一次，換板後仍反覆無法開機，尚未測試 CPU 或 RAM）。</li><li>回查既有表外「不能開機」與「POST Code 00」案例後續結果：重點追蹤 Relevant_Number_325 與 SpecialistConcept423，本次未發現新的公開後續結果，維持原判定。</li><li>整合案例表 351→353 筆（Google Sheets 197、表外 156），同步重算三項統計表；統計表中較上次有變動的數字以 New!／原數值 標示。</li></ul></td></tr>
+<tr><td>2026-09-11</td><td><ul><li>以完整 27 個 subreddit 清單、分頁查詢搜尋 2026-09-10 15:11 之後新發表的 Reddit 貼文，涵蓋至查詢當下。</li><li>新增 2 筆表外案例：確認 CPU 死亡 1 筆（samiamyammy／9700X、ASRock，換裝 9600X 測試後正常開機，交叉測試確認原 CPU 故障）；不能開機 1 筆（yeyo937／7700X、ASRock B850i Lightning WiFi，主機板已因同類症狀 RMA 更換過一次，換板後仍反覆無法開機，尚未測試 CPU 或 RAM）。</li><li>回查既有表外「不能開機」與「POST Code 00」案例後續結果：重點追蹤 Relevant_Number_325 與 SpecialistConcept423，本次未發現新的公開後續結果，維持原判定。</li><li>整合案例表 351→353 筆（Google Sheets 197、表外 156），同步重算三項統計表；統計表中較上次有變動的數字以 New!／原數值 標示。</li><li>整合案例表「狀態更新」標籤加上判定日期（v1.12），例如「狀態更新（2026-09-09）：原「POST Code 00」→「CPU 死亡」」，涵蓋全部 8 筆已標示狀態更新的案例。同步修正月份分布圖表與案例類別篩選器的比對規則，避免「（日期）」插入標籤後被誤判為未比對到分類而重演 v1.10 遺留的漏算問題。</li></ul></td></tr>
 <tr><td>2026-09-10</td><td><ul><li>以擴充後的完整 subreddit 清單（27 個版面，涵蓋 arctic-shift API 分頁查詢至涵蓋全部時間範圍）搜尋 2026-09-08 09:08 之後新發表的 Reddit 貼文，確保大版（pcmasterrace、buildapc、pchelp、techsupport 等）也完整涵蓋到查詢當下，而非受 API 單頁 100 筆上限截斷。</li><li>新增 6 筆表外案例：不能開機 5 筆（Holiday-General9114／7950X3D、Gigabyte X670E Aorus Master 二手板；aaiaac／9800X3D、ASRock B650i Lightning；PhantasmWing／9700X、Gigabyte B850 Eagle Ice WiFi7；rodreebanks／9800X3D、Gigabyte X870E Pro；roopdoge／9800X3D、ASUS ROG Strix X870i-Gaming WiFi 二手零件）；確認 CPU 死亡 1 筆（amuseicc／7950X3D、ASRock B650 Steel Legend WiFi，送修店家以測試機交叉測試確認原 CPU 故障）。</li><li>回查既有表外「不能開機」與「POST Code 00」案例後續結果：重點追蹤 9/8 新增的 Relevant_Number_325 與 SpecialistConcept423，本次未發現新的公開後續結果，維持原判定；6-9 月各月份已於前次更新完成逐筆回查，本輪未再重複。</li><li>整合案例表 345→351 筆（Google Sheets 197、表外 154），同步重算三項統計表；統計表中較上次有變動的數字以 New!／原數值 標示。</li><li>修正 v1.10 遺留的程式錯誤：「CPU 燒毀＋確認死亡 月份分布」圖表與「案例類別」篩選器的分類比對規則，未同步 v1.10 將「狀態更新」標籤改為顯示變動前後分類（如「狀態更新：原「POST Code 00」→「CPU 死亡」」）後的新格式，仍以只比對結尾為「狀態更新」四字的舊規則比對，導致 6 筆已標示狀態更新的案例（5 筆確認 CPU 死亡：ouut9jo、1n1ovu8、1jmigv5、1vcdtbm、1udap97；1 筆有證據燒掉：1qrmyag）未被圖表與篩選器計入。已修正為同時比對新舊兩種格式，圖表加總（20＋198＝218 筆）與統計表、篩選器結果已一致。</li></ul></td></tr>
 <tr><td>2026-09-09</td><td><ul><li>搜尋 2026-09-08 09:08 之後新發表的 Reddit 貼文與留言（約 28 小時區間），涵蓋 ASRock、ASUS、AMDHelp、MSI_Gaming、PcBuildHelp、pcbuilding 等主要 subreddit，並以瀏覽器直接搜尋 pcmasterrace、buildapc。</li><li>新增 1 筆表外案例：不能開機（Ryzen 7 9700X／MSI B850M Gaming X WiFi，Relevant_Number_325，CPU／VGA debug 燈亮無法開機，新組裝機無先前正常使用紀錄）。</li><li>使用者回報 1 篇本輪搜尋遺漏的 r/GamersNexus 貼文（SpecialistConcept423／9950X3D died after motherboard swap）；查核後補入 POST Code 00 案例（Ryzen 9 9950X3D／ASUS ROG Crosshair X670E Hero，換板後 F10 存檔即出現 Code 00，已聯繫 AMD RMA尚無最終結果，CPU 與插槽均無彎針或燒痕）。查明遺漏原因：本輪及先前各輪的搜尋 subreddit 清單為手動挑選的常見版面，未涵蓋 r/GamersNexus——即使該版面本身已是 Google Sheets 母表既有案例的來源之一（母表另有 2 筆 r/GamersNexus 案例）。已將搜尋 subreddit 清單擴充為涵蓋報告歷來所有案例來源的完整清單（新增 GamersNexus、ASUSROG、RigBuild、TechHardware、ryzen、hardware、overclocking、pctroubleshooting、techsupport、pchelp、de_EDV、PCGamingDE、PHbuildapc 等），並於「關鍵字與篩選規則」註明此檢核程序，避免同類遺漏再次發生。</li><li>逐筆回查 2026 年 9 月表外「不能開機」與「POST Code 00」全部 9 筆案例的原始討論串，發現 2 筆有後續結果：DroptimusPrimeSC2（r/pcmasterrace，原列 POST Code 00）標題已改註「*SOLVED*」，後續留言查證確認是記憶體故障、非 CPU 問題，已改列「設定後恢復」並標示「狀態更新」；SpecialistConcept423（r/GamersNexus，POST Code 00）2026-09-09 更新「AMD accepted the RMA of the dead 9950x3d」，RMA 已受理但尚無最終結果，已更新證據文字，分類維持不變。其餘 7 筆本次未發現新的公開後續結果，維持原判定。</li><li>整合案例表 344→345 筆（Google Sheets 197、表外 148），同步重算三項統計表；統計表中較上次有變動的數字以 New!／原數值 標示。</li><li>Revision History 改為預設收合、點擊展開；修正「排查」用語為「查證／檢查」。</li><li>逐筆回查 2026 年 8 月表外「不能開機」與「POST Code 00」全部 17 筆案例的原始討論串，發現 1 筆有後續結果：Dry-Permission8332（r/pcmasterrace，Ryzen 9 9950X3D／Gigabyte X870E AORUS Pro ICE，原列不能開機）後續更新以 replacement CPU（Ryzen 5 7600X）測試後正常開機，確認原 CPU 故障、作者計畫 RMA，已改列「確認 CPU 死亡」。4 筆貼文已被移除（需登入才能檢視，內容無法查證：chicagonative1989／1vq7q55、MKPCS／1vq3sse、Wayward54／1vnvgto、a10fthagfish／1vj7pm0），2 筆已由原作者自行刪除且無留言記錄最終結果（Ok-Street9859／1vwbdb6、kat6276／1vuralz），其餘 10 筆本次未發現新的公開後續結果，維持原判定。同步重算三項統計表與「有證據燒掉＋確認死亡」主機板廠牌表／CPU model 欄位（213→214 筆）。</li><li>逐筆回查 2026 年 7 月表外「不能開機」與「POST Code 00」全部 2 筆案例：drsc0t（r/pcmasterrace，已換裝 9800X3D 測試但仍出現 Code 00，尚無定論）維持原判定；1ukjska 原始貼文已被移除，需登入才能檢視，內容無法查證。</li><li>逐筆回查 2026 年 6 月表外「不能開機」與「POST Code 00」全部 3 筆案例：RareSun671（r/AMDHelp 留言，西班牙文，仍在測試中，尚無定論）維持原判定；AMDHelp/1ucd8p9、AMDHelp/1tvra7s 原始貼文均已被移除，需登入才能檢視，內容無法查證，已於證據欄位加註說明。同時發現這兩筆的證據文字其實已記載跨主機板／跨系統交叉測試確認 CPU 故障，只是自動分類系統未辨識該段敘述而誤判為不能開機，已補上明確判定用語修正為「確認 CPU 死亡」。另發現 1 筆 Google Sheets 母表案例有狀態更新：Aggravating-Dirt3432（r/pcmasterrace，9950X3D／ASRock X870E Nova WiFi，原列 POST Code 00）留言確認已透過第三方賣家完成 RMA 並收到 replacement CPU，已改列「確認 CPU 死亡」。三筆修正同步反映於案例類別統計、「有證據燒掉＋確認死亡」主機板廠牌表與 CPU model 欄位（213→217 筆）。</li><li>本輪查核中發現已刪除或被移除的貼文／留言（Ok-Street9859、kat6276、chicagonative1989、MKPCS、Wayward54、a10fthagfish、1ukjska 共 7 筆），均保留在整合案例表中，於證據欄位加註刪除或移除說明，不影響案例類別判定。</li><li>整合案例表「狀態更新」標籤改版（v1.10）：由籠統的「狀態更新」四字改為明確標示變動前後的分類（例如「原「POST Code 00」→「CPU 死亡」」），涵蓋全部 7 筆已標示狀態更新的案例。</li></ul></td></tr>
 <tr><td>2026-09-08</td><td><ul><li>搜尋 2026-09-07 17:42 之後新發表的 Reddit 貼文與留言（約 15 小時區間），涵蓋 ASRock、ASUS、AMDHelp、MSI_Gaming、PcBuildHelp、pcbuilding 等主要 subreddit，並以瀏覽器直接搜尋 pcmasterrace、buildapc。</li><li>新增 2 筆表外案例，均為確認 CPU 死亡、均為 ASRock 主機板：IndustryHot9287／X870E Nova（Ryzen 7 9800X3D，換新 CPU 後直接開機，確認原 CPU 故障，無燒痕）；StrawberryNo6878／B650 PG Lightning（Ryzen 5 9600X，經維修店鑑定確認 CPU 故障）。</li><li>回查既有表外「不能開機」與「POST Code 00」案例的後續結果：重點抽查 9/7 新增的 4 筆與 BARRY6969696969 等活躍討論串，本次未發現新的公開後續結果，維持原判定（前一輪已於 2026-09-07 完成全部 35 筆的逐筆核對）。</li><li>整合案例表 342→344 筆（Google Sheets 197、表外 147），同步重算三項統計表；統計表中較上次有變動的數字以 New!／原數值 標示。</li></ul></td></tr>
@@ -554,14 +556,14 @@ document.addEventListener('DOMContentLoaded', function () {
     '1ppgrkl', '1ljrf08', '1my8idb', '1ppdhwd', '1qhl96x', '1o1cpd8'
   ]);
   const statusUpdatedFrom = {
-    'ouut9jo': 'POST Code 00',
-    '1qrmyag': '不能開機',
-    '1n1ovu8': 'POST Code 00',
-    '1jmigv5': 'POST Code 00',
-    '1ptpalv': 'CPU 燒毀',
-    '1w49j3n': 'POST Code 00',
-    '1vcdtbm': '不能開機',
-    '1udap97': 'POST Code 00'
+    'ouut9jo': {from: 'POST Code 00', date: '2026-09-03'},
+    '1qrmyag': {from: '不能開機', date: '2026-09-03'},
+    '1n1ovu8': {from: 'POST Code 00', date: '2026-09-03'},
+    '1jmigv5': {from: 'POST Code 00', date: '2026-09-03'},
+    '1ptpalv': {from: 'CPU 燒毀', date: '2026-09-03'},
+    '1w49j3n': {from: 'POST Code 00', date: '2026-09-09'},
+    '1vcdtbm': {from: '不能開機', date: '2026-09-09'},
+    '1udap97': {from: 'POST Code 00', date: '2026-09-09'}
   };
   Array.from(targetBody.querySelectorAll('tr')).forEach(function (tr) {
     const link = tr.children[5] ? tr.children[5].querySelector('a[href*="/comments/"]') : null;
@@ -576,8 +578,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const matchedId = match && (match[2] ? (Object.prototype.hasOwnProperty.call(statusUpdatedFrom, match[2]) ? match[2] : null) : (Object.prototype.hasOwnProperty.call(statusUpdatedFrom, match[1]) ? match[1] : null));
     if (matchedId && tr.children[6]) {
       const currentCategory = tr.children[6].textContent.trim();
-      const fromCategory = statusUpdatedFrom[matchedId];
-      tr.children[6].innerHTML += ' <span class="tag newmark" title="原始討論串已有後續結果，案例類別已更新">狀態更新：原「' + fromCategory + '」→「' + currentCategory + '」</span>';
+      const statusInfo = statusUpdatedFrom[matchedId];
+      tr.children[6].innerHTML += ' <span class="tag newmark" title="原始討論串已有後續結果，案例類別已更新">狀態更新（' + statusInfo.date + '）：原「' + statusInfo.from + '」→「' + currentCategory + '」</span>';
       tr.dataset.statusUpdated = 'true';
     }
   });
@@ -650,7 +652,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let matched = 0;
     let shown = 0;
     Array.from(targetBody.querySelectorAll('tr')).forEach(function (tr) {
-      const category = (tr.children[6] ? tr.children[6].textContent.trim() : '').replace(/\s*狀態更新[：:].*$/, '').replace(/\s*狀態更新\s*$/, '');
+      const category = (tr.children[6] ? tr.children[6].textContent.trim() : '').replace(/\s*狀態更新(?:（[^）]*）)?[：:].*$/, '').replace(/\s*狀態更新\s*$/, '');
       const categoryMatches = selectedCategory === 'all' || category === selectedCategory;
       const boardMatches = selectedBoard === 'all' || tr.dataset.boardBrand === selectedBoard;
       const monthMatches = selectedMonth === 'all' || tr.dataset.month === selectedMonth;
@@ -684,7 +686,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Array.from(targetBody.querySelectorAll('tr')).forEach(function (tr) {
       const month = tr.dataset.month;
       if (!month || month === '未註明') return;
-      const cat = tr.children[6].textContent.trim().replace(/\s*狀態更新[：:].*$/, '').replace(/\s*狀態更新\s*$/, '');
+      const cat = tr.children[6].textContent.trim().replace(/\s*狀態更新(?:（[^）]*）)?[：:].*$/, '').replace(/\s*狀態更新\s*$/, '');
       if (cat === 'CPU 燒毀') burnCounts[month] = (burnCounts[month] || 0) + 1;
       else if (cat === 'CPU 死亡') deadCounts[month] = (deadCounts[month] || 0) + 1;
     });
